@@ -59,6 +59,7 @@ import SlideMigrationRoi from './slides/SlideMigrationRoi'
 import SlideAiAgentHub from './slides/SlideAiAgentHub'
 import SlideSolidifyAi from './slides/SlideSolidifyAi'
 import DeckMenu from './components/DeckMenu'
+import PasswordModal from './components/PasswordModal'
 
 interface SlideProps {
   onPrev?: () => void
@@ -755,26 +756,41 @@ function readHash(): number {
 }
 
 export default function App() {
-  const [index, setIndex] = useState(readHash)
+  const [isUnlocked, setIsUnlocked] = useState(false)
+  const [index, setIndex] = useState(0)
 
   const go = useCallback((next: number) => {
+    if (!isUnlocked) return
     const clamped = Math.max(0, Math.min(slideItems.length - 1, next))
     const item = slideItems[clamped]
     window.location.hash = `#/${item.hash}`
     setIndex(clamped)
-  }, [])
+  }, [isUnlocked])
 
   const navigateToSlideNumber = useCallback((slideNumber: number) => {
+    if (!isUnlocked) return
     const targetIdx = slideItems.findIndex((item) => item.slideNumber === slideNumber)
     if (targetIdx !== -1) {
       go(targetIdx)
     }
-  }, [go])
+  }, [go, isUnlocked])
+
+  const handleUnlock = useCallback(() => {
+    setIsUnlocked(true)
+    window.location.hash = '#/1'
+    setIndex(0)
+  }, [])
 
   useEffect(() => {
+    if (!isUnlocked) {
+      if (window.location.hash && window.location.hash !== '#/1' && window.location.hash !== '#1') {
+        window.location.hash = '#/1'
+      }
+      return
+    }
+
     const onHash = () => setIndex(readHash())
     const onKey = (e: KeyboardEvent) => {
-      // Don't intercept arrow keys if an input or textarea is active
       const activeTag = document.activeElement?.tagName.toLowerCase()
       if (activeTag === 'input' || activeTag === 'textarea') return
 
@@ -799,31 +815,34 @@ export default function App() {
       window.removeEventListener('hashchange', onHash)
       window.removeEventListener('keydown', onKey)
     }
-  }, [go, index])
+  }, [go, index, isUnlocked])
 
-  const currentItem = slideItems[index] || slideItems[0]
+  const currentItem = isUnlocked ? (slideItems[index] || slideItems[0]) : slideItems[0]
 
   return (
     <>
-      <DeckMenu
-        currentHash={currentItem.hash}
-        onSelectHash={(hash) => {
-          const targetIdx = slideItems.findIndex(
-            (item) => item.hash.toLowerCase() === hash.toLowerCase() || item.key.toLowerCase() === hash.toLowerCase()
-          )
-          if (targetIdx !== -1) {
-            go(targetIdx)
-          } else {
-            window.location.hash = `#/${hash}`
-          }
-        }}
-      />
+      {!isUnlocked && <PasswordModal onUnlock={handleUnlock} />}
+      {isUnlocked && (
+        <DeckMenu
+          currentHash={currentItem.hash}
+          onSelectHash={(hash) => {
+            const targetIdx = slideItems.findIndex(
+              (item) => item.hash.toLowerCase() === hash.toLowerCase() || item.key.toLowerCase() === hash.toLowerCase()
+            )
+            if (targetIdx !== -1) {
+              go(targetIdx)
+            } else {
+              window.location.hash = `#/${hash}`
+            }
+          }}
+        />
+      )}
       {currentItem.render({
-        onNext: () => go(index + 1),
-        onPrev: () => go(index - 1),
-        onNavigate: navigateToSlideNumber,
-        hasNext: index < slideItems.length - 1,
-        hasPrev: index > 0,
+        onNext: () => (isUnlocked ? go(index + 1) : undefined),
+        onPrev: () => (isUnlocked ? go(index - 1) : undefined),
+        onNavigate: isUnlocked ? navigateToSlideNumber : undefined,
+        hasNext: isUnlocked && index < slideItems.length - 1,
+        hasPrev: isUnlocked && index > 0,
       })}
     </>
   )
