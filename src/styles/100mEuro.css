@@ -1,0 +1,673 @@
+/* ==========================================================================
+   €100M PARTNER-LED AI ADOPTION INCENTIVE (SLIDE 100M_Euro)
+   Executive White Theme with Live Animated Sakura Petals
+   ========================================================================== */
+
+.euro-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #ffffff;
+  color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  user-select: none;
+  padding: clamp(10px, 1.6vh, 18px) clamp(16px, 2.5vw, 36px) clamp(8px, 1.2vh, 14px);
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   BACKGROUND & SAKURA AMBIENCE (WHITE CANVAS)
+   ========================================================================== */
+.euro-art-stage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* ==========================================================================
+   HEADER SECTION
+   ========================================================================== */
+.euro-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.euro-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.euro-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  padding: 0.22rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #b45309;
+  margin-bottom: 0.25rem;
+  width: fit-content;
+}
+
+.euro-eyebrow-kanji {
+  color: #d97706;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.euro-main-title {
+  font-size: clamp(1.6rem, 2.2vw, 2.25rem);
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  line-height: 1.15;
+  margin: 0 0 0.2rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.euro-title-highlight {
+  background: linear-gradient(135deg, #0284c7 0%, #00338d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: none;
+}
+
+.euro-title-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.18rem 0.55rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  color: #00338d;
+  letter-spacing: 0.06em;
+}
+
+.euro-main-subtitle {
+  font-size: clamp(0.85rem, 0.95vw, 0.96rem);
+  color: #475569;
+  line-height: 1.38;
+  margin: 0;
+  font-weight: 450;
+  max-width: 950px;
+}
+
+.euro-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+  padding-top: 0.2rem;
+}
+
+.euro-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.38rem 0.85rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1px solid #f59e0b;
+  color: #92400e;
+  border-radius: 9px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
+}
+
+.euro-spec-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.85rem;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.euro-spec-btn:hover {
+  background: #e2e8f0;
+  border-color: #00338d;
+  color: #00338d;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   MAIN 3-COLUMN SHOWCASE STAGE
+   ========================================================================== */
+.euro-stage {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 280px 1.1fr 1.35fr;
+  gap: clamp(12px, 1.4vw, 20px);
+  flex: 1;
+  min-height: 0;
+  margin: clamp(8px, 1.2vh, 14px) 0;
+}
+
+/* ==========================================================================
+   COLUMN 1: STRATEGIC FOUNDATIONS (3 Crisp Blue Accent Cards)
+   ========================================================================== */
+.euro-col-foundations {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vh, 12px);
+  justify-content: space-between;
+}
+
+.euro-foundation-card {
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: clamp(12px, 1.3vw, 16px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+  transition: all 0.25s ease;
+  overflow: hidden;
+  flex: 1;
+}
+
+.euro-foundation-card:hover {
+  border-color: #0284c7;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.15);
+}
+
+.euro-foundation-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #0284c7, #00338d);
+}
+
+.euro-fund-hero-val {
+  font-size: clamp(1.8rem, 2.4vw, 2.5rem);
+  font-weight: 900;
+  color: #00338d;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 0.25rem;
+  text-shadow: none;
+}
+
+.euro-fund-sub {
+  font-size: clamp(0.82rem, 0.9vw, 0.88rem);
+  color: #475569;
+  line-height: 1.35;
+  margin: 0;
+  font-weight: 500;
+}
+
+.euro-fund-sub strong {
+  color: #0f172a;
+}
+
+.euro-fund-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.18rem 0.55rem;
+  border-radius: 6px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #00338d;
+  width: fit-content;
+}
+
+/* ==========================================================================
+   COLUMN 2: QUALIFICATION & GOVERNANCE (Middle Card)
+   ========================================================================== */
+.euro-col-governance {
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: clamp(12px, 1.4vw, 18px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+}
+
+.euro-gov-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.euro-gov-title {
+  font-size: 0.98rem;
+  font-weight: 850;
+  color: #00338d;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.15rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.3rem;
+}
+
+.euro-gov-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background: #f8fafc;
+  padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: clamp(0.78rem, 0.85vw, 0.85rem);
+  color: #334155;
+  line-height: 1.35;
+}
+
+.euro-gov-icon {
+  font-size: 0.85rem;
+  color: #0284c7;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.euro-gov-item strong {
+  color: #0f172a;
+  font-weight: 750;
+}
+
+.euro-gov-tag {
+  color: #00338d;
+  font-weight: 700;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.euro-gov-tag.excluded {
+  color: #dc2626;
+  font-weight: 800;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+/* Links & QR Code Strip */
+.euro-gov-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.55rem 0.75rem;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  margin-top: 0.5rem;
+}
+
+.euro-gov-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.euro-gov-link {
+  color: #00338d;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.2s ease;
+}
+
+.euro-gov-link:hover {
+  color: #0284c7;
+  text-decoration: underline;
+}
+
+.euro-qr-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.5rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: #0f172a;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* ==========================================================================
+   COLUMN 3: 4 INCENTIVE PACKAGES (Right Column)
+   ========================================================================== */
+.euro-col-packages {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vh, 11px);
+  justify-content: space-between;
+}
+
+.euro-pkg-card {
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: clamp(10px, 1.2vw, 14px) clamp(12px, 1.4vw, 16px);
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.4vw, 18px);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+  overflow: hidden;
+  flex: 1;
+}
+
+.euro-pkg-card:hover,
+.euro-pkg-card.active {
+  transform: translateX(4px);
+  border-color: #00338d;
+  box-shadow: 0 8px 24px rgba(0, 51, 141, 0.14);
+  background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+}
+
+.euro-pkg-amount {
+  font-size: clamp(1.6rem, 2.1vw, 2.2rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #00338d;
+  min-width: 90px;
+  text-shadow: none;
+}
+
+.euro-pkg-card:hover .euro-pkg-amount,
+.euro-pkg-card.active .euro-pkg-amount {
+  color: #0284c7;
+}
+
+.euro-pkg-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  flex: 1;
+}
+
+.euro-pkg-title {
+  font-size: clamp(0.96rem, 1.08vw, 1.12rem);
+  font-weight: 850;
+  color: #0f172a;
+  letter-spacing: -0.015em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.euro-pkg-desc {
+  font-size: clamp(0.78rem, 0.84vw, 0.86rem);
+  color: #475569;
+  line-height: 1.35;
+  margin: 0;
+  font-weight: 450;
+}
+
+.euro-pkg-desc strong {
+  color: #0f172a;
+  font-weight: 750;
+}
+
+.euro-pkg-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde047;
+}
+
+.euro-pkg-badge.top {
+  background: #fce7f3;
+  color: #9d174d;
+  border-color: #fbcfe8;
+}
+
+/* ==========================================================================
+   BOTTOM ESTIMATOR / SYNERGY BANNER
+   ========================================================================== */
+.euro-footer-banner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: clamp(6px, 0.9vh, 9px) clamp(14px, 1.6vw, 20px);
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+  flex-shrink: 0;
+  margin-bottom: clamp(6px, 0.9vh, 10px);
+}
+
+.euro-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.euro-banner-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  border-radius: 7px;
+  background: #fef3c7;
+  border: 1px solid #fde047;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #92400e;
+  letter-spacing: 0.06em;
+}
+
+.euro-banner-text {
+  font-size: clamp(0.78rem, 0.85vw, 0.86rem);
+  color: #334155;
+  line-height: 1.35;
+}
+
+.euro-banner-text strong {
+  color: #00338d;
+}
+
+.euro-banner-chips {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.euro-banner-chip {
+  font-size: 0.72rem;
+  font-weight: 750;
+  color: #0284c7;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+
+/* ==========================================================================
+   FOOTER NAVIGATION
+   ========================================================================== */
+.euro-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.euro-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 1rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  color: #1e293b;
+  font-size: 0.86rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.euro-nav-btn:hover {
+  background: #f1f5f9;
+  border-color: #00338d;
+  color: #00338d;
+  transform: translateY(-1px);
+}
+
+.euro-nav-btn.primary {
+  background: linear-gradient(135deg, #00338d 0%, #00186b 100%);
+  border-color: #002266;
+  color: #ffffff;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(0, 51, 141, 0.25);
+}
+
+.euro-nav-btn.primary:hover {
+  background: linear-gradient(135deg, #0040c1 0%, #002b80 100%);
+  box-shadow: 0 6px 18px rgba(0, 51, 141, 0.4);
+}
+
+/* ==========================================================================
+   SPEC LIGHTBOX MODAL
+   ========================================================================== */
+.euro-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: euroFadeIn 0.2s ease-out;
+}
+
+.euro-modal-card {
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 18px;
+  max-width: 96vw;
+  max-height: 94vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+.euro-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.4rem;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.euro-modal-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.euro-modal-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.euro-modal-close-btn:hover {
+  color: #0f172a;
+  background: #e2e8f0;
+}
+
+.euro-modal-body {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.euro-modal-img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes euroFadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}

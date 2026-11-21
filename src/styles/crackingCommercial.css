@@ -1,0 +1,540 @@
+/* ========================================================
+   CRACKING THE COMMERCIAL SLIDE STYLING
+   Japanese Commercial / Money Culture Background with Animation
+   3 Interactive Circular Commercial Tiers at Bottom
+   ======================================================== */
+
+.commercial-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(12px, 1.8vh, 22px) clamp(24px, 3.2vw, 48px);
+  color: #f8fafc;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: var(--font-body, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  background: #060914;
+}
+
+/* ========================================================
+   BACKGROUND: JAPANESE COMMERCIAL ARTWORK & ANIMATIONS
+   ======================================================== */
+.commercial-art-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.commercial-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.03);
+  animation: bgSubtleKenBurns 30s ease-in-out infinite alternate;
+  filter: brightness(0.85) contrast(1.08);
+}
+
+@keyframes bgSubtleKenBurns {
+  0% { transform: scale(1.02) translate(0, 0); }
+  50% { transform: scale(1.06) translate(-1%, -0.5%); }
+  100% { transform: scale(1.03) translate(0.5%, 0); }
+}
+
+/* Atmospheric dark vignettes to maintain high readability */
+.commercial-vignette-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 38%;
+  background: linear-gradient(180deg, rgba(6, 9, 20, 0.92) 0%, rgba(6, 9, 20, 0.75) 50%, transparent 100%);
+  z-index: 1;
+}
+
+.commercial-vignette-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 52%;
+  background: linear-gradient(0deg, rgba(6, 9, 20, 0.96) 0%, rgba(6, 9, 20, 0.8) 55%, transparent 100%);
+  z-index: 1;
+}
+
+/* Floating Gold Koban (Japanese gold coins) & Gold Shimmer Dust */
+.commercial-gold-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.commercial-koban {
+  position: absolute;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: radial-gradient(circle at 35% 30%, #fef08a 0%, #eab308 50%, #854d0e 100%);
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.5), inset 0 0 4px rgba(255, 255, 255, 0.8);
+  border: 1px solid #ca8a04;
+  opacity: 0.75;
+  animation: floatKoban linear infinite;
+}
+
+@keyframes floatKoban {
+  0% {
+    transform: translateY(105vh) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg) scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* Traditional Inari prosperity torii glow */
+.commercial-torii-glow {
+  position: absolute;
+  bottom: 12%;
+  right: 15%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.18) 0%, rgba(249, 115, 22, 0.1) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 2;
+  animation: pulseInariGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulseInariGlow {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.15); opacity: 1; }
+}
+
+/* ========================================================
+   HEADER
+   ======================================================== */
+.commercial-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.commercial-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.commercial-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #facc15;
+  background: rgba(234, 179, 8, 0.14);
+  border: 1px solid rgba(234, 179, 8, 0.35);
+  padding: 3px 13px;
+  border-radius: 999px;
+  width: fit-content;
+  backdrop-filter: blur(8px);
+}
+
+.commercial-title {
+  font-family: var(--font-display, inherit);
+  font-size: clamp(26px, 2.7vw, 38px);
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+}
+
+.commercial-title .highlight-gold {
+  background: linear-gradient(135deg, #fef08a 0%, #facc15 50%, #eab308 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.commercial-subtitle {
+  font-size: clamp(13px, 0.95vw, 15px);
+  font-weight: 400;
+  color: #cbd5e1;
+  margin: 0;
+  max-width: 980px;
+  line-height: 1.45;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.commercial-header-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 650;
+  color: #e2e8f0;
+  backdrop-filter: blur(8px);
+}
+
+/* ========================================================
+   MAIN STAGE: CENTER EXECUTIVE VALUE CALLOUT
+   ======================================================== */
+.commercial-main {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 0;
+  gap: clamp(12px, 2vh, 24px);
+  padding-bottom: clamp(10px, 1.5vh, 18px);
+}
+
+/* Active Tier Detailed Glass Drawer (Appears above the circles) */
+.commercial-detail-banner {
+  background: rgba(15, 23, 42, 0.82);
+  border: 1.5px solid rgba(250, 204, 21, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(250, 204, 21, 0.15);
+  backdrop-filter: blur(16px);
+  padding: clamp(10px, 1.5vh, 16px) clamp(16px, 2vw, 28px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  animation: bannerFadeUp 0.3s ease-out;
+}
+
+@keyframes bannerFadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.commercial-detail-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.commercial-detail-badge {
+  font-size: 26px;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(250, 204, 21, 0.15);
+  border: 1px solid rgba(250, 204, 21, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.commercial-detail-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.commercial-detail-tier-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #facc15;
+}
+
+.commercial-detail-title {
+  font-size: clamp(16px, 1.2vw, 20px);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.commercial-detail-desc {
+  font-size: clamp(12px, 0.88vw, 14px);
+  color: #cbd5e1;
+  margin: 0;
+  max-width: 680px;
+  line-height: 1.4;
+}
+
+.commercial-detail-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.commercial-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.commercial-meta-pill.highlight {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+/* ========================================================
+   BOTTOM: 3 SMALL CIRCLES WITH SUGGESTED ICONS
+   Joule Base | SAP Assistants/Agents | Custom Agents
+   ======================================================== */
+.commercial-circles-stage {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(24px, 4.5vw, 68px);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.commercial-circle-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  position: relative;
+}
+
+.commercial-circle-card:hover,
+.commercial-circle-card.is-active {
+  transform: translateY(-8px);
+}
+
+/* Circular Node Base */
+.commercial-circle-node {
+  position: relative;
+  width: clamp(74px, 6.2vw, 92px);
+  height: clamp(74px, 6.2vw, 92px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+}
+
+/* Outer Orbiting Glow Ring */
+.commercial-circle-node::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(255, 255, 255, 0.3);
+  animation: rotateOrbit 18s linear infinite;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+@keyframes rotateOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.commercial-circle-card:hover .commercial-circle-node::after,
+.commercial-circle-card.is-active .commercial-circle-node::after {
+  inset: -9px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+/* 1. Joule Base Specific Styling */
+.commercial-circle-card.joule-base .commercial-circle-node {
+  background: radial-gradient(circle at 35% 30%, #38bdf8 0%, #0284c7 55%, #034875 100%);
+  border: 2px solid #7dd3fc;
+  box-shadow: 0 8px 30px rgba(2, 132, 199, 0.45);
+}
+
+.commercial-circle-card.joule-base:hover .commercial-circle-node,
+.commercial-circle-card.joule-base.is-active .commercial-circle-node {
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.7), 0 0 12px #38bdf8;
+  border-color: #bae6fd;
+}
+
+.commercial-circle-card.joule-base .commercial-circle-node::after {
+  border-color: rgba(56, 189, 248, 0.6);
+}
+
+/* 2. SAP Assistants/Agents Specific Styling */
+.commercial-circle-card.sap-agents .commercial-circle-node {
+  background: radial-gradient(circle at 35% 30%, #a855f7 0%, #7c3aed 55%, #4c1d95 100%);
+  border: 2px solid #c084fc;
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.45);
+}
+
+.commercial-circle-card.sap-agents:hover .commercial-circle-node,
+.commercial-circle-card.sap-agents.is-active .commercial-circle-node {
+  box-shadow: 0 0 35px rgba(168, 85, 247, 0.7), 0 0 12px #c084fc;
+  border-color: #e9d5ff;
+}
+
+.commercial-circle-card.sap-agents .commercial-circle-node::after {
+  border-color: rgba(168, 85, 247, 0.6);
+}
+
+/* 3. Custom Agents Specific Styling */
+.commercial-circle-card.custom-agents .commercial-circle-node {
+  background: radial-gradient(circle at 35% 30%, #fef08a 0%, #eab308 55%, #854d0e 100%);
+  border: 2px solid #fde047;
+  box-shadow: 0 8px 30px rgba(234, 179, 8, 0.45);
+}
+
+.commercial-circle-card.custom-agents:hover .commercial-circle-node,
+.commercial-circle-card.custom-agents.is-active .commercial-circle-node {
+  box-shadow: 0 0 35px rgba(250, 204, 21, 0.75), 0 0 12px #fde047;
+  border-color: #fef9c3;
+}
+
+.commercial-circle-card.custom-agents .commercial-circle-node::after {
+  border-color: rgba(234, 179, 8, 0.7);
+}
+
+/* Icon Inside Circle */
+.commercial-circle-icon {
+  width: clamp(34px, 2.9vw, 44px);
+  height: clamp(34px, 2.9vw, 44px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s ease;
+}
+
+.commercial-circle-card:hover .commercial-circle-icon,
+.commercial-circle-card.is-active .commercial-circle-icon {
+  transform: scale(1.15);
+}
+
+/* Label & Tier Tag Under Circles */
+.commercial-circle-label-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3px;
+}
+
+.commercial-circle-title {
+  font-size: clamp(15px, 1.15vw, 17px);
+  font-weight: 850;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  white-space: nowrap;
+}
+
+.commercial-circle-badge {
+  font-size: 12px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.commercial-circle-card.joule-base .commercial-circle-badge {
+  background: rgba(56, 189, 248, 0.2);
+  color: #7dd3fc;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.commercial-circle-card.sap-agents .commercial-circle-badge {
+  background: rgba(168, 85, 247, 0.2);
+  color: #d8b4fe;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+}
+
+.commercial-circle-card.custom-agents .commercial-circle-badge {
+  background: rgba(250, 204, 21, 0.2);
+  color: #fef08a;
+  border: 1px solid rgba(250, 204, 21, 0.4);
+}
+
+/* ========================================================
+   FOOTER
+   ======================================================== */
+.commercial-footer {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: clamp(8px, 1vh, 12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.commercial-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 650;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(15, 23, 42, 0.65);
+  color: #e2e8f0;
+  backdrop-filter: blur(8px);
+}
+
+.commercial-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #facc15;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.commercial-nav-btn.primary {
+  background: linear-gradient(135deg, #00338D 0%, #0284c7 100%);
+  color: #ffffff;
+  border-color: #38bdf8;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+}
+
+.commercial-nav-btn.primary:hover {
+  background: linear-gradient(135deg, #002266 0%, #0369a1 100%);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.6);
+}

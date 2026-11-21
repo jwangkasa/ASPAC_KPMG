@@ -1,0 +1,533 @@
+/* ========================================================
+   PREMIUM AI SLIDE STYLING
+   Aligning fixed pricing with scalable consumption to meet demand
+   Executive 2-Pillar AI Units Commercial Framework
+   ======================================================== */
+
+.prem-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(10px, 1.3vh, 18px) clamp(20px, 2.8vw, 44px);
+  background: radial-gradient(circle at 50% 0%, #f4f6ff 0%, #ffffff 55%, #f8faff 100%);
+  color: #0f172a;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: var(--font-body, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+}
+
+/* Top Accent Bar */
+.prem-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 40%, #0284c7 100%);
+  z-index: 10;
+}
+
+/* Ambient Radial Glows */
+.prem-ambient-left {
+  position: absolute;
+  top: -80px;
+  left: 10%;
+  width: 420px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.prem-ambient-right {
+  position: absolute;
+  top: -60px;
+  right: 12%;
+  width: 440px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header */
+.prem-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: clamp(4px, 0.8vh, 10px);
+}
+
+.prem-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.prem-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #4f46e5;
+  background: #eef2ff;
+  border: 1px solid #e0e7ff;
+  padding: 4px 14px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.prem-main-title {
+  font-family: var(--font-display, inherit);
+  font-size: clamp(26px, 2.8vw, 38px);
+  font-weight: 900;
+  color: #1e1b4b;
+  letter-spacing: -0.025em;
+  margin: 0;
+  line-height: 1.18;
+}
+
+.prem-main-subtitle {
+  font-size: clamp(14px, 1.15vw, 17px);
+  color: #1e3a8a;
+  margin: 0;
+  font-weight: 550;
+  letter-spacing: -0.01em;
+}
+
+.prem-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prem-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  font-size: 13px;
+  font-weight: 750;
+  color: #6b21a8;
+  letter-spacing: 0.02em;
+}
+
+.prem-badge-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  font-size: 13px;
+  font-weight: 750;
+  color: #0f172a;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.prem-badge-btn:hover {
+  background: #f8fafc;
+  border-color: #6366f1;
+  color: #4f46e5;
+  box-shadow: 0 3px 10px rgba(99, 102, 241, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Central Stage Container with Crown Badge */
+.prem-stage {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+  margin: clamp(4px, 0.8vh, 10px) 0;
+}
+
+/* Master Outer Card Frame */
+.prem-frame {
+  position: relative;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid #c7d2fe;
+  border-radius: 24px;
+  padding: clamp(24px, 3vh, 34px) clamp(18px, 2.2vw, 32px) clamp(16px, 2vh, 22px);
+  box-shadow: 0 12px 36px rgba(99, 102, 241, 0.08), 0 2px 8px rgba(15, 23, 42, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Centered AI Units Token Crown Badge */
+.prem-crown-badge-container {
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.prem-crown-coins {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -10px;
+  position: relative;
+}
+
+.prem-coin {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.prem-coin.left {
+  transform: translateX(8px) scale(0.85);
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.prem-coin.center {
+  width: 38px;
+  height: 38px;
+  font-size: 13px;
+  z-index: 3;
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.45);
+}
+
+.prem-coin.right {
+  transform: translateX(-8px) scale(0.85);
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.prem-crown-pill {
+  background: linear-gradient(90deg, #6366f1 0%, #7c3aed 100%);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  padding: 5px 22px;
+  border-radius: 999px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
+  text-transform: uppercase;
+}
+
+/* Two Columns Split Inside the Frame */
+.prem-columns-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 2.5vw, 36px);
+  height: 100%;
+}
+
+/* Individual Consumption Pillar Card */
+.prem-col-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: clamp(14px, 1.8vh, 20px) clamp(16px, 1.8vw, 24px);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s ease;
+}
+
+.prem-col-card:hover {
+  border-color: #a5b4fc;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.09);
+  transform: translateY(-2px);
+}
+
+/* Column Header Banner */
+.prem-col-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: clamp(16px, 1.35vw, 19px);
+  font-weight: 850;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  margin-bottom: clamp(10px, 1.5vh, 16px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.prem-col-card.actions .prem-col-header-bar {
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #7c3aed 100%);
+}
+
+.prem-col-card.records .prem-col-header-bar {
+  background: linear-gradient(135deg, #3b82f6 0%, #4f46e5 50%, #6366f1 100%);
+}
+
+/* Bullet Points */
+.prem-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 clamp(12px, 1.8vh, 20px) 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.5vh, 16px);
+  flex: 1;
+}
+
+.prem-features-list > li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: clamp(14px, 1.05vw, 15px);
+  line-height: 1.45;
+  color: #1e293b;
+}
+
+.prem-bullet-dot {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-top: 6px;
+}
+
+.prem-col-card.actions .prem-bullet-dot {
+  background: #7c3aed;
+  box-shadow: 0 0 6px rgba(124, 58, 237, 0.5);
+}
+
+.prem-col-card.records .prem-bullet-dot {
+  background: #3b82f6;
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.5);
+}
+
+/* Sub-action nested bullets */
+.prem-sub-list {
+  list-style: none;
+  padding-left: 18px;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.prem-sub-list li {
+  position: relative;
+  font-size: clamp(13px, 0.95vw, 14px);
+  color: #475569;
+  line-height: 1.4;
+}
+
+.prem-sub-list li::before {
+  content: '–';
+  position: absolute;
+  left: -12px;
+  color: #6366f1;
+  font-weight: 700;
+}
+
+/* Lower Solution Metric Pills Container */
+.prem-pills-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: clamp(8px, 1.2vh, 14px);
+  border-top: 1px dashed #e2e8f0;
+}
+
+.prem-pills-label {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #475569;
+}
+
+.prem-pills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.prem-pill-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(8px, 1.1vh, 11px) 16px;
+  border-radius: 10px;
+  background: #f1f3fd;
+  border: 1px solid #e0e7ff;
+  color: #3730a3;
+  font-size: clamp(13px, 1.05vw, 15px);
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.prem-pill-item:hover {
+  background: #e0e7ff;
+  color: #1e1b4b;
+  border-color: #c7d2fe;
+  transform: translateY(-1px);
+}
+
+/* Footnote */
+.prem-footnote {
+  margin-top: 8px;
+  font-size: clamp(12px, 0.85vw, 13px);
+  color: #475569;
+  text-align: left;
+}
+
+.prem-footnote a,
+.prem-footnote button {
+  color: #4f46e5;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Footer Navigation */
+.prem-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: clamp(6px, 1vh, 10px);
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.prem-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.06);
+}
+
+.prem-nav-btn:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+  transform: translateY(-1px);
+}
+
+.prem-nav-btn.primary {
+  background: linear-gradient(135deg, #4f46e5 0%, #0284c7 100%);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+}
+
+.prem-nav-btn.primary:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #0369a1 100%);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.45);
+  transform: translateY(-1px);
+}
+
+/* Modal Lightbox for Original Specification */
+.prem-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: premModalFadeIn 0.2s ease;
+}
+
+@keyframes premModalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.prem-modal-content {
+  position: relative;
+  max-width: 92vw;
+  max-height: 90vh;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+}
+
+.prem-modal-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #0f172a;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.prem-modal-close:hover {
+  background: #ef4444;
+  transform: scale(1.1);
+}
+
+.prem-modal-img {
+  max-width: 100%;
+  max-height: 84vh;
+  object-fit: contain;
+  border-radius: 10px;
+}

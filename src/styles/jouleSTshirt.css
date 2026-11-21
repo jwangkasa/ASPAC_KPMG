@@ -1,0 +1,645 @@
+/* ==========================================================================
+   Joule Studio Agent T-Shirt Sizing Slide Styling
+   Executive Presentation Architecture - 100vh Viewport Optimized
+   High-Legibility Enlarged Typography & Bold Matrix Presentation
+   KPMG x SAP ASPAC 2026 Presentation System
+   ========================================================================== */
+
+.jst-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 40%, #eef2ff 100%);
+  color: #111827;
+  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(6px, 1vh, 12px) clamp(16px, 2.2vw, 36px);
+  box-sizing: border-box;
+}
+
+/* Ambient subtle glows */
+.jst-ambient-left {
+  position: absolute;
+  top: -6%;
+  left: -5%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.jst-ambient-right {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ==========================================================================
+   Header Section (Enlarged Typography)
+   ========================================================================== */
+.jst-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: clamp(3px, 0.6vh, 6px);
+  flex-shrink: 0;
+}
+
+.jst-title-group {
+  max-width: 960px;
+}
+
+.jst-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.22rem 0.7rem;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.28);
+  border-radius: 9999px;
+  font-size: 0.80rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #4f46e5;
+  margin-bottom: 0.25rem;
+}
+
+.jst-main-title {
+  font-size: clamp(23px, 2.1vw, 29px);
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  line-height: 1.18;
+  margin: 0 0 0.2rem;
+}
+
+.jst-main-subtitle {
+  font-size: clamp(13px, 1.02vw, 15px);
+  color: #475569;
+  line-height: 1.35;
+  margin: 0;
+  font-weight: 500;
+}
+
+.jst-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+}
+
+.jst-filter-btn-group {
+  display: flex;
+  background: #ffffff;
+  padding: 0.2rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.jst-filter-btn {
+  padding: 0.32rem 0.75rem;
+  border: none;
+  background: transparent;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #64748b;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.jst-filter-btn.active {
+  background: #4f46e5;
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(79, 70, 229, 0.3);
+}
+
+.jst-spec-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 650;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.jst-spec-btn:hover {
+  background: #f8fafc;
+  border-color: #6366f1;
+  color: #4f46e5;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(99, 102, 241, 0.15);
+}
+
+/* ==========================================================================
+   Main Stage: Bottom Aligned Architecture
+   ========================================================================== */
+.jst-main-stage {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: clamp(4px, 0.6vh, 8px);
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Matrix Grid Section (Enlarged Legibility)
+   ========================================================================== */
+.jst-matrix-card {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.jst-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.jst-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+/* Column Widths & Headers */
+.jst-table th.col-dim {
+  width: 20%;
+  background: #f8fafc;
+  color: #1e293b;
+  font-size: 0.90rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.52rem 0.95rem;
+  border-right: 1.5px solid #e2e8f0;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.jst-table th.col-tier {
+  padding: 0.52rem 0.95rem;
+  border-right: 1.5px solid #e2e8f0;
+  border-bottom: 2px solid #e2e8f0;
+  transition: background-color 0.2s ease;
+}
+
+.jst-table th.col-tier:last-child {
+  border-right: none;
+}
+
+.jst-table th.tier-small {
+  width: 26.66%;
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+}
+
+.jst-table th.tier-medium {
+  width: 26.66%;
+  background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+}
+
+.jst-table th.tier-large {
+  width: 26.66%;
+  background: linear-gradient(180deg, #f5f3ff 0%, #ffffff 100%);
+}
+
+/* Tier Header Content */
+.jst-tier-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.jst-tier-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jst-tier-title-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.15rem;
+  font-weight: 850;
+  letter-spacing: -0.01em;
+}
+
+.jst-tier-title-badge.badge-small {
+  color: #15803d;
+}
+
+.jst-tier-title-badge.badge-medium {
+  color: #1d4ed8;
+}
+
+.jst-tier-title-badge.badge-large {
+  color: #6d28d9;
+}
+
+.jst-tier-tag {
+  font-size: 0.74rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  padding: 0.15rem 0.55rem;
+  border-radius: 9999px;
+  letter-spacing: 0.04em;
+}
+
+.jst-tier-tag.tag-small {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.jst-tier-tag.tag-medium {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
+.jst-tier-tag.tag-large {
+  background: #ede9fe;
+  color: #5b21b6;
+  border: 1px solid #ddd6fe;
+}
+
+.jst-tier-desc {
+  font-size: 0.84rem;
+  font-weight: 650;
+  color: #475569;
+  line-height: 1.28;
+}
+
+/* Row Styling */
+.jst-table td {
+  padding: 0.46rem 0.95rem;
+  border-right: 1.5px solid #e2e8f0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.90rem;
+  color: #1e293b;
+  vertical-align: middle;
+}
+
+.jst-table td:last-child {
+  border-right: none;
+}
+
+.jst-table tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* Highlighted Memory Row */
+.jst-table tr.row-highlight-memory td {
+  background-color: #fefce8;
+  border-bottom: 1.5px solid #fef08a;
+}
+
+.jst-table tr.row-highlight-memory:hover td {
+  background-color: #fef9c3;
+}
+
+.jst-table tr.row-highlight-memory td.col-dim-title {
+  color: #854d0e;
+  font-weight: 800;
+}
+
+/* Dimension Cell */
+.jst-dim-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.jst-dim-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  background: #f1f5f9;
+}
+
+.jst-dim-title {
+  font-weight: 800;
+  color: #0f172a;
+  font-size: 0.92rem;
+}
+
+/* Metric Content inside cells */
+.jst-metric-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.jst-metric-main {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.jst-metric-cost {
+  font-size: 0.84rem;
+  color: #4338ca;
+  font-weight: 700;
+  background: rgba(99, 102, 241, 0.08);
+  padding: 0.12rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.jst-metric-cost.muted {
+  color: #475569;
+  background: #f1f5f9;
+}
+
+.jst-operating-pattern-text {
+  font-size: 0.88rem;
+  color: #334155;
+  font-weight: 650;
+  line-height: 1.32;
+}
+
+/* Total / Agent / Month Highlight Row */
+.jst-table tr.row-total td {
+  background: linear-gradient(90deg, #3730a3 0%, #4338ca 50%, #4f46e5 100%);
+  color: #ffffff;
+  padding: 0.65rem 0.95rem;
+  border-bottom: none;
+}
+
+.jst-table tr.row-total td.col-dim-total {
+  font-size: 0.98rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #e0e7ff;
+  border-right: 1.5px solid rgba(255, 255, 255, 0.2);
+}
+
+.jst-total-hero-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+
+.jst-total-hero-val {
+  font-size: 1.42rem;
+  font-weight: 900;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.jst-total-hero-sub {
+  font-size: 0.82rem;
+  color: #c7d2fe;
+  font-weight: 550;
+}
+
+/* ==========================================================================
+   Guidance Card: HOW TO USE THIS (Enlarged)
+   ========================================================================== */
+.jst-guide-card {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border: 1px solid #c7d2fe;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.06);
+  padding: 0.5rem 0.95rem;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  flex-shrink: 0;
+}
+
+.jst-guide-label-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.7rem;
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.jst-guide-bullets {
+  flex: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.jst-guide-bullet-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  font-size: 0.84rem;
+  color: #334155;
+  line-height: 1.32;
+}
+
+.jst-guide-bullet-item span.bullet-dot {
+  color: #4f46e5;
+  font-weight: 850;
+  font-size: 0.95rem;
+}
+
+.jst-guide-bullet-item strong {
+  color: #0f172a;
+  font-weight: 750;
+}
+
+/* ==========================================================================
+   Footnotes Bar
+   ========================================================================== */
+.jst-footnotes-bar {
+  position: relative;
+  z-index: 2;
+  font-size: 0.76rem;
+  color: #64748b;
+  line-height: 1.38;
+  margin-bottom: 0;
+  padding: 0 0.15rem;
+  flex-shrink: 0;
+}
+
+.jst-footnotes-bar p {
+  margin: 0 0 0.15rem;
+}
+
+/* ==========================================================================
+   Footer Section (Always Visible)
+   ========================================================================== */
+.jst-footer {
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: clamp(4px, 0.6vh, 6px);
+  border-top: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.jst-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 1.05rem;
+  border-radius: 8px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  color: #334155;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.jst-nav-btn:hover {
+  background: #f8fafc;
+  border-color: #6366f1;
+  color: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.jst-nav-btn.primary {
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(79, 70, 229, 0.25);
+}
+
+.jst-nav-btn.primary:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+}
+
+/* ==========================================================================
+   Lightbox Modal for Spec Preview
+   ========================================================================== */
+.jst-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.jst-modal-content {
+  position: relative;
+  max-width: 95vw;
+  max-height: 90vh;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.jst-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.jst-modal-header span {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.jst-modal-close {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.jst-modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.jst-modal-body {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e293b;
+  overflow: auto;
+}
+
+.jst-modal-img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 8px;
+}

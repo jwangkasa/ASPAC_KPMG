@@ -1,0 +1,392 @@
+/* ========================================================
+   Agenda Slide Styles
+   ASPAC SAP Leadership Summit - Tokyo 2026
+   Executive Deck Sections Roadmap (9 Sections)
+   ======================================================== */
+
+.agenda-slide {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(10px, 1.6vh, 18px) clamp(18px, 2.4vw, 36px);
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+/* Background Art & Japanese Scenery */
+.agenda-bg-art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.agenda-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.15) brightness(0.85);
+  transform: scale(1.02);
+  animation: agenda-slow-zoom 25s ease-in-out infinite alternate;
+}
+
+.agenda-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(10, 15, 38, 0.74) 0%,
+    rgba(6, 10, 28, 0.9) 60%,
+    rgba(4, 6, 18, 0.96) 100%
+  );
+  backdrop-filter: blur(1.5px);
+}
+
+@keyframes agenda-slow-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.04);
+  }
+}
+
+/* Header */
+.agenda-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: clamp(2px, 0.4vh, 6px);
+  margin-bottom: clamp(6px, 1vh, 12px);
+}
+
+.agenda-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: clamp(9.5px, 0.75vw, 11px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #ffcf40;
+  background: rgba(255, 207, 64, 0.12);
+  border: 1px solid rgba(255, 207, 64, 0.32);
+  padding: 3px 12px;
+  border-radius: 999px;
+  margin-bottom: 4px;
+  backdrop-filter: blur(8px);
+}
+
+.agenda-kanji {
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+.agenda-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 2.8vw, 38px);
+  font-weight: 850;
+  color: #ffffff;
+  margin: 0 0 2px 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 207, 64, 0.25);
+}
+
+.agenda-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(11.5px, 0.86vw, 13.5px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 auto;
+  max-width: 720px;
+  line-height: 1.35;
+}
+
+/* Main Content: 9 Sections Grid */
+.agenda-main {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: clamp(2px, 0.6vh, 8px) 0;
+}
+
+.agenda-sections-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: clamp(8px, 1vw, 14px);
+  width: 100%;
+  max-width: 1380px;
+  height: 100%;
+  max-height: clamp(520px, 73vh, 690px);
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Custom Scrollbar */
+.agenda-sections-grid::-webkit-scrollbar {
+  width: 5px;
+}
+
+.agenda-sections-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+}
+
+.agenda-sections-grid::-webkit-scrollbar-thumb {
+  background: rgba(201, 162, 75, 0.4);
+  border-radius: 4px;
+}
+
+.agenda-sections-grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 207, 64, 0.7);
+}
+
+/* Individual Section Card */
+.agenda-section-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: clamp(9px, 1.2vh, 13px) clamp(11px, 1.1vw, 15px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(14px);
+  transition: all 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+}
+
+.agenda-section-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #c9a24b 0%, #ffcf40 100%);
+  opacity: 0.75;
+  transition: opacity 0.2s ease, height 0.2s ease;
+}
+
+.agenda-section-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 207, 64, 0.55);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 22px rgba(201, 162, 75, 0.3);
+  background: rgba(20, 32, 64, 0.84);
+}
+
+.agenda-section-card:hover::before {
+  opacity: 1;
+  height: 4px;
+}
+
+/* Card Top: Badges & Icon */
+.agenda-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.agenda-card-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.agenda-section-pill {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(201, 162, 75, 0.22);
+  color: #ffcf40;
+  border: 1px solid rgba(201, 162, 75, 0.45);
+}
+
+.agenda-slide-count {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.agenda-section-icon {
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+}
+
+/* Title & Summary */
+.agenda-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(13.5px, 1.05vw, 16px);
+  font-weight: 750;
+  color: #ffffff;
+  margin: 2px 0 3px 0;
+  line-height: 1.25;
+  transition: color 0.2s ease;
+}
+
+.agenda-section-card:hover .agenda-section-title {
+  color: #ffcf40;
+}
+
+.agenda-section-summary {
+  font-family: var(--font-body);
+  font-size: clamp(10.5px, 0.78vw, 11.8px);
+  color: rgba(255, 255, 255, 0.74);
+  margin: 0 0 6px 0;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Highlights List */
+.agenda-highlights-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.agenda-highlight-tag {
+  font-family: var(--font-body);
+  font-size: 9.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  padding: 2px 6px;
+  line-height: 1.25;
+}
+
+/* Card Footer */
+.agenda-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: auto;
+}
+
+.agenda-hash-tag {
+  font-family: 'JetBrains Mono', monospace, Consolas;
+  font-size: 10px;
+  font-weight: 600;
+  color: #c9a24b;
+  opacity: 0.85;
+}
+
+.agenda-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #ffcf40;
+  letter-spacing: 0.02em;
+}
+
+.agenda-arrow {
+  font-size: 13px;
+  line-height: 1;
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.agenda-section-card:hover .agenda-arrow {
+  transform: translateX(3px);
+}
+
+/* Footer Navigation */
+.agenda-footer-nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: clamp(6px, 0.9vh, 10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.agenda-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: clamp(11.5px, 0.84vw, 13.5px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(15, 23, 42, 0.6);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.agenda-nav-btn:hover {
+  background: rgba(20, 30, 60, 0.85);
+  border-color: rgba(201, 162, 75, 0.6);
+  transform: translateY(-1px);
+}
+
+.agenda-nav-btn.primary {
+  background: linear-gradient(135deg, #c9a24b 0%, #e5b95c 100%);
+  color: #0b1120;
+  border-color: transparent;
+  font-weight: 750;
+  box-shadow: 0 4px 18px rgba(201, 162, 75, 0.4);
+}
+
+.agenda-nav-btn.primary:hover {
+  background: linear-gradient(135deg, #d8b056 0%, #f0c76e 100%);
+  box-shadow: 0 6px 22px rgba(201, 162, 75, 0.55);
+}
+
+/* Responsive adjustment */
+@media (max-width: 1100px) {
+  .agenda-sections-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .agenda-sections-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    overflow-y: auto;
+  }
+}

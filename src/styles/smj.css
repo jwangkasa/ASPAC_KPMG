@@ -1,0 +1,462 @@
+/* ========================================================
+   SMJ SLIDE (Customer-Managed Joule to SAP-Managed Joule)
+   ======================================================== */
+
+.smj-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(12px, 1.8vh, 22px) clamp(24px, 3.2vw, 48px);
+  background: radial-gradient(circle at 50% 0%, #f8f6ff 0%, #ffffff 55%, #f2f5fc 100%);
+  color: #0f172a;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+}
+
+/* Ambient glow accents */
+.smj-glow-purple {
+  position: absolute;
+  top: -8%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.smj-glow-blue {
+  position: absolute;
+  bottom: -8%;
+  left: -5%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header */
+.smj-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: clamp(6px, 1vh, 12px);
+}
+
+.smj-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.smj-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #7c3aed;
+  background: rgba(124, 58, 237, 0.08);
+  padding: 3px 12px;
+  border-radius: 999px;
+  width: fit-content;
+  margin-bottom: 2px;
+}
+
+.smj-title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 2.8vw, 38px);
+  font-weight: 850;
+  color: #00186b;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.smj-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(13px, 1.05vw, 15.5px);
+  font-weight: 500;
+  color: #475569;
+  margin: 0;
+  max-width: 980px;
+  line-height: 1.45;
+}
+
+/* ========================================================
+   MAIN CONTENT AREA
+   ======================================================== */
+.smj-main {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  min-height: 0;
+  gap: clamp(14px, 1.8vw, 26px);
+  padding: 2px 0;
+}
+
+/* Side-by-side balanced columns */
+.smj-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  padding: clamp(12px, 1.6vh, 20px) clamp(16px, 1.8vw, 24px);
+  overflow-y: auto;
+  transition: all 0.25s ease;
+}
+
+.smj-col:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 12px 32px rgba(124, 58, 237, 0.09);
+}
+
+.smj-col-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.smj-col-title {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.5vw, 22px);
+  font-weight: 800;
+  color: #00186b;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.smj-col-badge {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+
+/* ========================================================
+   SECTION 1: SAP-MANAGED JOULE PILLARS & DIAGRAM
+   ======================================================== */
+.smj-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.smj-pillar-card {
+  background: linear-gradient(135deg, #faf5ff 0%, #ffffff 100%);
+  border: 1px solid #e9d5ff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.smj-pillar-card:hover {
+  transform: translateY(-2px);
+  border-color: #c084fc;
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.1);
+}
+
+.smj-pillar-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #f3e8ff;
+  color: #7c3aed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+
+.smj-pillar-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.smj-pillar-desc {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #334155;
+  font-weight: 500;
+}
+
+/* ========================================================
+   CENTERED ARCHITECTURE DIAGRAM CARD & IMAGE
+   ======================================================== */
+.smj-diagram-card {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #faf5ff 100%);
+  border-radius: 14px;
+  border: 1.5px solid #e2e8f0;
+  padding: 14px 16px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+}
+
+.smj-diagram-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.smj-flow-badge {
+  font-size: 11.5px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.smj-flow-badge.btp {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.smj-flow-badge.me {
+  background: #f3e8ff;
+  color: #7c3aed;
+  border: 1px solid #e9d5ff;
+}
+
+.smj-flow-arrow-label {
+  font-size: 11px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #7c3aed;
+  white-space: nowrap;
+}
+
+.smj-diagram-img-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.smj-diagram-img {
+  max-width: 96%;
+  width: auto;
+  max-height: clamp(125px, 18vh, 180px);
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ========================================================
+   SECTION 2: WHAT CHANGED? (COMPARISON MATRIX)
+   ======================================================== */
+.smj-matrix-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.smj-matrix-pill {
+  display: inline-flex;
+  align-items: center;
+  background: #f1f5f9;
+  border-radius: 999px;
+  padding: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+.smj-matrix-pill-side {
+  padding: 7px 20px;
+  font-size: 13.5px;
+  font-weight: 750;
+  border-radius: 999px;
+  color: #0f172a;
+}
+
+.smj-matrix-pill-side.active-sap {
+  background: #7c3aed;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.35);
+}
+
+.smj-rows-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  justify-content: center;
+}
+
+.smj-compare-row {
+  display: flex;
+  align-items: stretch;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+  transition: all 0.2s ease;
+}
+
+.smj-compare-row:hover {
+  transform: translateY(-1px);
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.smj-side-left {
+  flex: 1;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #f8fafc;
+  font-size: clamp(13px, 0.95vw, 15px);
+  font-weight: 600;
+  color: #1e293b;
+  border-right: 1.5px solid #e2e8f0;
+}
+
+.smj-side-right {
+  flex: 1.25;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #ffffff;
+  font-size: clamp(13.5px, 1vw, 15.5px);
+  font-weight: 750;
+  color: #6d28d9;
+}
+
+/* Key Strategic Outcomes Strip */
+.smj-outcomes-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(135deg, #faf5ff 0%, #f1f5f9 100%);
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  padding: 14px 18px;
+  margin-top: 14px;
+}
+
+.smj-outcome-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3px;
+}
+
+.smj-outcome-val {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 850;
+  color: #7c3aed;
+}
+
+.smj-outcome-lbl {
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.smj-outcome-divider {
+  width: 1px;
+  height: 28px;
+  background: #cbd5e1;
+}
+
+/* ========================================================
+   FOOTER NAVIGATION & CENTERED LOGO IMAGE
+   ======================================================== */
+.smj-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: clamp(8px, 1.2vh, 14px);
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.smj-footer .brand-lockup-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.smj-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  font-size: 13.5px;
+  font-weight: 650;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.smj-nav-btn:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+.smj-nav-btn.primary {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  color: #ffffff;
+  border-color: #6d28d9;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.35);
+}
+
+.smj-nav-btn.primary:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.45);
+}

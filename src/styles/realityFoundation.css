@@ -1,0 +1,338 @@
+/* ========================================================
+   AI REALITY & FOUNDATION SLIDE
+   "AI is everywhere. Results aren't" vs "What AI needs to succeed, SAP already has!"
+   ======================================================== */
+
+.reality-slide-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(16px, 2.2vh, 28px) clamp(24px, 3.2vw, 48px);
+  background: #f8fafc;
+  color: #0f172a;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Main Split Grid */
+.reality-main-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(16px, 2vw, 28px);
+  min-height: 0;
+  margin-bottom: clamp(10px, 1.4vh, 16px);
+}
+
+/* Left Panel: The Problem */
+.reality-left-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: clamp(18px, 2.2vh, 28px) clamp(20px, 2.2vw, 32px);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+}
+
+.reality-left-header {
+  margin-bottom: clamp(12px, 1.6vh, 18px);
+}
+
+.reality-left-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 800;
+  color: #00338d;
+  line-height: 1.15;
+  margin: 0 0 clamp(10px, 1.4vh, 16px) 0;
+  letter-spacing: -0.01em;
+}
+
+/* Stats Row */
+.reality-stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(14px, 1.8vw, 24px);
+  margin-bottom: clamp(14px, 1.8vh, 22px);
+  padding-bottom: clamp(12px, 1.6vh, 18px);
+  border-bottom: 1px solid #edf2f7;
+}
+
+.reality-stat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.reality-stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 3.4vw, 48px);
+  font-weight: 800;
+  color: #00186b;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+
+.reality-stat-label {
+  font-size: clamp(11px, 0.88vw, 13px);
+  font-weight: 500;
+  color: #334155;
+  line-height: 1.35;
+  margin-top: 4px;
+}
+
+.reality-gaps-subtitle {
+  font-size: clamp(14px, 1.15vw, 17px);
+  font-weight: 700;
+  color: #00186b;
+  margin-bottom: clamp(10px, 1.4vh, 16px);
+}
+
+/* 3 Gaps Cards */
+.reality-gaps-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(10px, 1.2vw, 16px);
+  flex: 1;
+}
+
+.reality-gap-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #f8faff;
+  border: 1px solid #e0e7ff;
+  border-radius: 14px;
+  padding: clamp(14px, 1.8vh, 22px) clamp(14px, 1.3vw, 18px);
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.reality-gap-card:hover {
+  background: #ffffff;
+  border-color: #6366f1;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.12);
+}
+
+.reality-gap-title {
+  font-family: var(--font-display);
+  font-size: clamp(15px, 1.15vw, 18px);
+  font-weight: 750;
+  color: #00186b;
+  margin: 0 0 clamp(8px, 1vh, 12px) 0;
+  line-height: 1.3;
+}
+
+.reality-gap-desc {
+  font-size: clamp(13px, 0.98vw, 15px);
+  color: #334155;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Right Panel: The SAP Solution */
+.reality-right-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(145deg, #00186b 0%, #001247 60%, #060d2b 100%);
+  border-radius: 16px;
+  padding: clamp(18px, 2.2vh, 28px) clamp(20px, 2.2vw, 32px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 36px rgba(0, 24, 107, 0.25);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.reality-right-panel::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.reality-right-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 0 0 clamp(16px, 2vh, 24px) 0;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 3 SAP Strengths Cards */
+.reality-sap-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(12px, 1.4vw, 18px);
+  flex: 1;
+}
+
+.reality-sap-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  padding: clamp(16px, 2vh, 24px) clamp(14px, 1.3vw, 18px);
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+}
+
+.reality-sap-card:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: #38bdf8;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4), 0 0 16px rgba(56, 189, 248, 0.25);
+}
+
+.reality-sap-card-top {
+  margin-bottom: clamp(12px, 1.6vh, 18px);
+}
+
+.reality-sap-card-title {
+  font-family: var(--font-display);
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-weight: 750;
+  color: #ffffff;
+  margin: 0 0 clamp(8px, 1.1vh, 12px) 0;
+  line-height: 1.28;
+}
+
+.reality-sap-card-desc {
+  font-size: clamp(13px, 0.98vw, 15px);
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.reality-sap-card-bottom {
+  padding-top: clamp(10px, 1.4vh, 14px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.reality-sap-kpi-val {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.2vw, 32px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 4px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.reality-sap-kpi-lbl {
+  font-size: clamp(12px, 0.88vw, 13px);
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Bottom Foundation Chevron Banner */
+.reality-bottom-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: clamp(10px, 1.4vh, 16px) clamp(18px, 2vw, 28px);
+  margin-bottom: clamp(10px, 1.4vh, 16px);
+  position: relative;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+}
+
+.reality-banner-content {
+  flex: 1;
+}
+
+.reality-banner-title {
+  font-family: var(--font-display);
+  font-size: clamp(13px, 1.05vw, 16px);
+  font-weight: 800;
+  color: #064e3b;
+  margin: 0 0 3px 0;
+}
+
+.reality-banner-subtitle {
+  font-size: clamp(11px, 0.88vw, 13px);
+  color: #14532d;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.reality-banner-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #bbf7d0;
+  color: #064e3b;
+  font-size: 16px;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+/* Footer Navigation */
+.reality-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.reality-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.reality-nav-btn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #00338d;
+  transform: translateY(-1px);
+}
+
+.reality-nav-btn.primary {
+  background: linear-gradient(135deg, #00338d 0%, #00186b 100%);
+  border-color: #002266;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 51, 141, 0.2);
+}
+
+.reality-nav-btn.primary:hover {
+  background: linear-gradient(135deg, #0044b3 0%, #00238c 100%);
+  box-shadow: 0 6px 18px rgba(0, 51, 141, 0.3);
+}

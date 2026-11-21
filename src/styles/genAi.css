@@ -1,0 +1,432 @@
+/* ========================================================
+   GENAI SLIDE STYLING
+   "Generative AI: Powerful models. Business context. Enterprise control."
+   ======================================================== */
+
+.genai-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(12px, 1.6vh, 20px) clamp(20px, 2.8vw, 44px);
+  background: radial-gradient(circle at 50% 0%, #faf5ff 0%, #ffffff 50%, #f4f6fb 100%);
+  color: #0f172a;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: var(--font-body, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+}
+
+/* Ambient glow accents */
+.genai-glow-purple {
+  position: absolute;
+  top: -12%;
+  left: 20%;
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.09) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.genai-glow-blue {
+  position: absolute;
+  bottom: -10%;
+  right: 15%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header */
+.genai-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: clamp(6px, 1vh, 12px);
+}
+
+.genai-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.genai-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #7c3aed;
+  background: rgba(124, 58, 237, 0.08);
+  padding: 3px 12px;
+  border-radius: 999px;
+  width: fit-content;
+  margin-bottom: 2px;
+}
+
+.genai-title {
+  font-family: var(--font-display, inherit);
+  font-size: clamp(22px, 2.6vw, 36px);
+  font-weight: 850;
+  color: #00186b;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.genai-subtitle {
+  font-size: clamp(12px, 0.95vw, 14px);
+  font-weight: 500;
+  color: #475569;
+  margin: 0;
+  max-width: 960px;
+  line-height: 1.4;
+}
+
+.genai-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.genai-badge-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.genai-badge-btn:hover {
+  background: #faf5ff;
+  border-color: #a855f7;
+  color: #6b21a8;
+  transform: translateY(-1px);
+}
+
+.genai-badge-btn.primary {
+  background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.35);
+}
+
+.genai-badge-btn.primary:hover {
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.45);
+}
+
+/* ========================================================
+   MAIN CONTENT STAGE
+   ======================================================== */
+.genai-main {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  width: 100%;
+  padding: 2px 0;
+  gap: clamp(8px, 1.2vh, 14px);
+}
+
+.genai-diagram-card {
+  position: relative;
+  width: 100%;
+  max-width: 1220px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 32px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: clamp(8px, 1.2vh, 14px) clamp(12px, 1.4vw, 20px);
+  box-sizing: border-box;
+}
+
+.genai-diagram-card:hover {
+  border-color: #c084fc;
+  box-shadow: 0 16px 42px rgba(15, 23, 42, 0.12), 0 0 24px rgba(124, 58, 237, 0.14);
+}
+
+.genai-stage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.genai-img {
+  width: 100%;
+  max-height: clamp(300px, 49vh, 520px);
+  object-fit: contain;
+  display: block;
+  border-radius: 10px;
+}
+
+.genai-zoom-badge {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+  z-index: 5;
+}
+
+.genai-diagram-card:hover .genai-zoom-badge {
+  opacity: 1;
+}
+
+/* 3 Pillars Deep Dive below Diagram */
+.genai-pillars-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(10px, 1.4vw, 18px);
+  width: 100%;
+  max-width: 1220px;
+}
+
+.genai-pillar-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: clamp(10px, 1.2vh, 14px) clamp(12px, 1.2vw, 18px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  transition: all 0.22s ease;
+}
+
+.genai-pillar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.genai-pillar-card.models:hover {
+  border-color: #ec4899;
+}
+
+.genai-pillar-card.context:hover {
+  border-color: #6366f1;
+}
+
+.genai-pillar-card.control:hover {
+  border-color: #14b8a6;
+}
+
+.genai-pillar-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.genai-pillar-tag {
+  font-size: 11px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.genai-pillar-card.models .genai-pillar-tag {
+  background: #fdf2f8;
+  color: #db2777;
+  border: 1px solid #fbcfe8;
+}
+
+.genai-pillar-card.context .genai-pillar-tag {
+  background: #eef2ff;
+  color: #4f46e5;
+  border: 1px solid #c7d2fe;
+}
+
+.genai-pillar-card.control .genai-pillar-tag {
+  background: #f0fdfa;
+  color: #0d9488;
+  border: 1px solid #99f6e4;
+}
+
+.genai-pillar-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #00186b;
+  margin: 0;
+}
+
+.genai-pillar-desc {
+  font-size: 11px;
+  color: #475569;
+  margin: 0 0 8px 0;
+  line-height: 1.35;
+}
+
+.genai-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.genai-chip {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+/* ========================================================
+   FOOTER
+   ======================================================== */
+.genai-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: clamp(6px, 1vh, 12px);
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.genai-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.genai-nav-btn:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+.genai-nav-btn.primary {
+  background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.35);
+}
+
+.genai-nav-btn.primary:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #1d4ed8 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.45);
+}
+
+/* Lightbox Modal */
+.genai-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modalFadeIn 0.22s ease-out;
+}
+
+.genai-modal-content {
+  position: relative;
+  max-width: 96vw;
+  max-height: 94vh;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.genai-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  color: #475569;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.genai-modal-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+  transform: scale(1.08);
+}
+
+.genai-modal-img {
+  width: 100%;
+  height: auto;
+  max-height: 86vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

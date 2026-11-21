@@ -1,0 +1,478 @@
+/* ========================================================
+   JOULE SLIDE (Slide 4)
+   ======================================================== */
+
+.joule-slide-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(14px, 2vh, 24px) clamp(28px, 3.5vw, 52px);
+  background: radial-gradient(circle at 50% 0%, #f5f3ff 0%, #ffffff 55%, #f6f8fc 100%);
+  color: #0f172a;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Slide Header */
+.joule-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: clamp(2px, 0.4vh, 8px);
+  margin-bottom: clamp(8px, 1.2vh, 16px);
+}
+
+.joule-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: clamp(10px, 0.8vw, 12px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.08);
+  padding: 3px 12px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+
+.joule-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3.2vw, 46px);
+  font-weight: 850;
+  color: #00186b;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.025em;
+  text-shadow: 0 1px 3px rgba(0, 24, 107, 0.08);
+}
+
+.joule-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(13px, 0.95vw, 15px);
+  font-weight: 500;
+  color: #475569;
+  margin: 0;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.45;
+}
+
+/* ========================================================
+   MAIN CONTENT: Centered, Crisp, Naturally-Sized Diagram
+   ======================================================== */
+.joule-main-content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: clamp(6px, 1vh, 14px) 0;
+}
+
+.joule-diagram-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: clamp(14px, 2vh, 22px) clamp(16px, 2vw, 28px);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.08), 0 2px 6px rgba(15, 23, 42, 0.03);
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+  max-width: min(940px, 72vw);
+  max-height: clamp(360px, 58vh, 500px);
+  box-sizing: border-box;
+}
+
+.joule-diagram-card:hover {
+  transform: translateY(-3px);
+  border-color: #a855f7;
+  box-shadow: 0 14px 40px rgba(124, 58, 237, 0.15), 0 0 16px rgba(168, 85, 247, 0.2);
+}
+
+.joule-diagram-img {
+  width: 100%;
+  height: auto;
+  max-height: clamp(330px, 54vh, 460px);
+  object-fit: contain;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+  transition: transform 0.22s ease;
+}
+
+.joule-zoom-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.75);
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all 0.22s ease;
+  pointer-events: none;
+}
+
+.joule-diagram-card:hover .joule-zoom-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================================
+   FOOTER NAVIGATION
+   ======================================================== */
+.joule-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: clamp(8px, 1.2vh, 14px);
+  border-top: 1px solid #e2e8f0;
+}
+
+.joule-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.joule-nav-btn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #00338d;
+  transform: translateY(-1px);
+}
+
+.joule-nav-btn.primary {
+  background: linear-gradient(135deg, #00338d 0%, #00186b 100%);
+  border-color: #002266;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 51, 141, 0.2);
+}
+
+.joule-nav-btn.primary:hover {
+  background: linear-gradient(135deg, #0044b3 0%, #00238c 100%);
+  box-shadow: 0 6px 18px rgba(0, 51, 141, 0.3);
+}
+
+/* ========================================================
+   LIGHTBOX MODAL FOR FULL PREVIEW
+   ======================================================== */
+.joule-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.joule-modal-content {
+  background: #ffffff;
+  border-radius: 20px;
+  max-width: 1040px;
+  width: 100%;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  animation: modalFadeIn 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.joule-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  background: #faf5ff;
+}
+
+.joule-modal-header h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #00186b;
+  margin: 0;
+}
+
+.joule-modal-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.joule-modal-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.joule-modal-body {
+  padding: 20px 24px 24px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.joule-modal-img {
+  width: 100%;
+  max-height: 580px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Header Actions on the right: Stacked Vertically */
+.joule-header-actions {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 5px;
+  z-index: 10;
+  min-width: 138px;
+}
+
+.joule-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: clamp(11px, 0.82vw, 12.8px);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border: none;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+  text-decoration: none;
+}
+
+.joule-action-btn.arch-btn,
+.joule-arch-btn {
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(124, 58, 237, 0.3);
+}
+
+.joule-action-btn.arch-btn:hover,
+.joule-arch-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.45);
+}
+
+.joule-action-btn.component-btn {
+  background: #ffffff;
+  color: #4338ca;
+  border: 1.5px solid #c7d2fe;
+}
+
+.joule-action-btn.component-btn:hover {
+  background: #f5f3ff;
+  border-color: #818cf8;
+  color: #3730a3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.joule-action-btn.smj-btn {
+  background: linear-gradient(135deg, #faf5ff 0%, #ffffff 100%);
+  color: #7c3aed;
+  border: 1.5px solid #d8b4fe;
+}
+
+.joule-action-btn.smj-btn:hover {
+  background: #f3e8ff;
+  border-color: #a855f7;
+  color: #6b21a8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.25);
+}
+
+.joule-action-btn.video-btn {
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.3);
+}
+
+.joule-action-btn.video-btn:hover {
+  background: linear-gradient(135deg, #0369a1 0%, #1d4ed8 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.45);
+}
+
+.joule-action-btn .btn-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.joule-action-btn .action-icon,
+.joule-arch-btn .arch-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.joule-action-btn .action-arrow,
+.joule-arch-btn .arch-arrow {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.joule-action-btn:hover .action-arrow,
+.joule-arch-btn:hover .arch-arrow {
+  transform: translateX(2px);
+}
+
+/* ========================================================
+   Video Player Modal
+   ======================================================== */
+.joule-video-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 3vh, 32px);
+  animation: fadeIn 0.22s ease-out;
+}
+
+.joule-video-modal-content {
+  background: #0f172a;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  width: 100%;
+  max-width: min(1080px, 92vw);
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.7), 0 0 32px rgba(99, 102, 241, 0.28);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.joule-video-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: rgba(30, 41, 59, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.joule-video-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.joule-video-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+}
+
+.joule-video-modal-title h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.joule-video-close-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.joule-video-close-btn:hover {
+  background: rgba(239, 68, 68, 0.85);
+  border-color: rgba(239, 68, 68, 1);
+  transform: rotate(90deg);
+}
+
+.joule-video-player-wrapper {
+  position: relative;
+  width: 100%;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  max-height: clamp(380px, 68vh, 600px);
+}
+
+.joule-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  outline: none;
+}

@@ -1,0 +1,998 @@
+/* ========================================================
+   JOULE STUDIO COMMERCIAL MODEL
+   Interactive 3D Flip Card Architecture
+   Senior Creative Director Edition - KPMG x SAP ASPAC 2026
+   ======================================================== */
+
+.jsc-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(6px, 1vh, 14px) clamp(18px, 2.5vw, 40px);
+  background: radial-gradient(circle at 50% 0%, #f4f6ff 0%, #ffffff 50%, #f8faff 100%);
+  color: #0f172a;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: var(--font-body, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+}
+
+/* Architectural Top Accent Bar */
+.jsc-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #0284c7 100%);
+  z-index: 10;
+}
+
+/* Ambient Radial Glows */
+.jsc-ambient-left {
+  position: absolute;
+  top: -60px;
+  left: 8%;
+  width: 480px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.jsc-ambient-right {
+  position: absolute;
+  top: -60px;
+  right: 8%;
+  width: 500px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ========================================================
+   HEADER
+   ======================================================== */
+.jsc-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: clamp(3px, 0.6vh, 6px);
+  flex-shrink: 0;
+}
+
+.jsc-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.jsc-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6366f1;
+}
+
+.jsc-main-title {
+  font-size: clamp(22px, 2.2vw, 30px);
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  margin: 0;
+  background: linear-gradient(135deg, #0f172a 30%, #312e81 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.15;
+}
+
+.jsc-main-subtitle {
+  font-size: clamp(12px, 0.95vw, 14px);
+  color: #475569;
+  margin: 2px 0 0 0;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* Header Action Badges */
+.jsc-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.jsc-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  background: rgba(139, 92, 246, 0.09);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  color: #6d28d9;
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.jsc-flip-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  border: none;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(79, 70, 229, 0.25);
+  white-space: nowrap;
+}
+
+.jsc-flip-all-btn:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.35);
+}
+
+.jsc-badge-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  white-space: nowrap;
+}
+
+.jsc-badge-btn:hover {
+  background: #f8fafc;
+  border-color: #6366f1;
+  color: #4f46e5;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(99, 102, 241, 0.12);
+}
+
+/* ========================================================
+   PREREQUISITE BAR (Top Cross-Section Banner)
+   ======================================================== */
+.jsc-prereq-banner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  background: #f1f4ff;
+  border: 1px solid #dbe2fe;
+  border-radius: 12px;
+  padding: 5px 12px;
+  margin-bottom: clamp(4px, 0.8vh, 8px);
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.05);
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.jsc-prereq-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  box-shadow: 0 2px 5px rgba(79, 70, 229, 0.25);
+}
+
+.jsc-prereq-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  font-size: clamp(12px, 0.95vw, 13px);
+  color: #334155;
+  line-height: 1.3;
+}
+
+.jsc-prereq-divider {
+  width: 2px;
+  height: 24px;
+  background: #818cf8;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.jsc-prereq-highlight {
+  font-weight: 800;
+  color: #1e1b4b;
+}
+
+.jsc-prereq-bold-action {
+  font-weight: 850;
+  color: #1e40af;
+}
+
+/* ========================================================
+   STAGE: 2-COLUMN COMMERCIAL GRID WITH 3D FLIP
+   ======================================================== */
+.jsc-stage {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(6px, 1vh, 10px);
+  min-height: 0;
+}
+
+.jsc-hint-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.jsc-hint-text {
+  font-size: 12px;
+  color: #475569;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  padding: 3px 14px;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.jsc-hint-text strong {
+  color: #4f46e5;
+}
+
+.jsc-columns-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(14px, 1.8vw, 24px);
+  align-items: stretch;
+  flex: 1;
+  min-height: 0;
+}
+
+/* ========================================================
+   3D FLIP CARD SHELL & ROTATION
+   ======================================================== */
+.jsc-flip-card {
+  perspective: 1400px;
+  min-height: clamp(300px, 44vh, 390px);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.jsc-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: clamp(300px, 44vh, 390px);
+  transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.jsc-flip-card.flipped .jsc-flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Card Faces */
+.jsc-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+  border: 1.5px solid #e2e8f0;
+  box-sizing: border-box;
+  transition: all 0.25s ease;
+}
+
+.jsc-flip-card:hover .jsc-card-face {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(99, 102, 241, 0.12), 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+/* Specific Face Themes */
+.jsc-card-face.card-free {
+  border-top: 4px solid #4f46e5;
+  background: linear-gradient(180deg, #e6ecfa 0%, #edf2fc 45%, #e0e7f7 100%);
+  border-color: #cbd5e1;
+}
+
+.jsc-card-face.card-paid {
+  border-top: 4px solid #7c3aed;
+  background: linear-gradient(180deg, #faf9fe 0%, #ffffff 30%);
+  border-color: #cbd5e1;
+}
+
+/* ========================================================
+   FRONT FACE: HEADER VIEW
+   ======================================================== */
+.jsc-card-front {
+  padding: clamp(12px, 1.4vh, 18px) clamp(14px, 1.4vw, 20px);
+  gap: 10px;
+}
+
+.jsc-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.jsc-face-eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #4f46e5;
+  margin-bottom: 2px;
+}
+
+.card-paid .jsc-face-eyebrow {
+  color: #7c3aed;
+}
+
+.jsc-card-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.jsc-card-title {
+  font-size: clamp(19px, 1.5vw, 23px);
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: #0f172a;
+}
+
+.jsc-card-desc {
+  font-size: clamp(12px, 0.95vw, 13px);
+  color: #475569;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Tier Badges (Free vs Paid) */
+.jsc-tier-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 16px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.jsc-tier-badge.badge-free {
+  background: linear-gradient(135deg, #4338ca 0%, #4f46e5 50%, #6366f1 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(79, 70, 229, 0.35);
+  animation: jscFreeBadgePulse 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jsc-tier-badge.badge-free::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 20%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0.1) 80%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  animation: jscFreeShimmer 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.jsc-badge-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+  animation: jscDotPulse 2s infinite;
+}
+
+.jsc-free-text {
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  display: inline-block;
+  animation: jscFreeTextPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes jscFreeBadgePulse {
+  0%, 100% {
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 4px 18px rgba(99, 102, 241, 0.6), 0 0 12px rgba(129, 140, 248, 0.45);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes jscFreeShimmer {
+  0% {
+    left: -120%;
+  }
+  40%, 100% {
+    left: 180%;
+  }
+}
+
+@keyframes jscDotPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+  }
+  70% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 6px rgba(74, 222, 128, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+  }
+}
+
+@keyframes jscFreeTextPulse {
+  0%, 100% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+  }
+  50% {
+    transform: translateY(-0.5px);
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.7));
+  }
+}
+
+.jsc-tier-badge.badge-paid {
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+  color: #ffffff;
+}
+
+/* Front Body */
+.jsc-front-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  justify-content: center;
+}
+
+.jsc-front-summary-card {
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.jsc-front-summary-card.free-tint {
+  background: #ffffff;
+  border: 1px solid #c7d2fe;
+}
+
+.jsc-front-summary-card.paid-tint {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.jsc-front-summary-label {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+}
+
+.jsc-front-summary-text {
+  font-size: clamp(12px, 0.98vw, 14px);
+  line-height: 1.45;
+  color: #1e293b;
+  margin: 0;
+}
+
+.jsc-front-summary-text strong {
+  color: #0f172a;
+}
+
+/* Front Chips Row */
+.jsc-front-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.jsc-front-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 9px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+}
+
+/* Meter Tags for Paid Card */
+.jsc-meters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 9px;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.jsc-meters-bar.mini {
+  padding: 4px 8px;
+  gap: 5px;
+}
+
+.jsc-meters-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 0.04em;
+  margin-right: 2px;
+}
+
+.jsc-meter-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2.5px 7px;
+  border-radius: 5px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  font-size: 11px;
+  font-weight: 750;
+  color: #334155;
+}
+
+/* Front CTA */
+.jsc-front-cta {
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 750;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.jsc-front-cta.free-cta {
+  background: rgba(255, 255, 255, 0.7);
+  color: #4338ca;
+}
+
+.jsc-front-cta.paid-cta {
+  background: #f8fafc;
+  color: #6d28d9;
+}
+
+.jsc-flip-card:hover .jsc-front-cta {
+  background: #ffffff;
+}
+
+.jsc-cta-icon {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.jsc-flip-card:hover .jsc-cta-icon {
+  transform: rotate(180deg);
+}
+
+/* ========================================================
+   BACK FACE: DEEP DETAILS
+   ======================================================== */
+.jsc-card-back {
+  padding: clamp(10px, 1.2vh, 16px) clamp(14px, 1.4vw, 20px);
+  transform: rotateY(180deg);
+  gap: 8px;
+}
+
+.jsc-back-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.jsc-back-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.jsc-back-tier-pill {
+  font-size: 10px;
+  font-weight: 850;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.jsc-back-tier-pill.free {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.jsc-back-tier-pill.paid {
+  background: #7c3aed;
+  color: #ffffff;
+}
+
+.jsc-back-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.jsc-back-tag {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.jsc-back-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  justify-content: space-between;
+}
+
+/* Inner White Box with Bullet Points */
+.jsc-feature-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.02);
+}
+
+.jsc-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.jsc-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: clamp(11px, 0.88vw, 13px);
+  line-height: 1.35;
+  color: #1e293b;
+}
+
+.jsc-bullet-marker {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.card-free .jsc-bullet-marker {
+  background: #4f46e5;
+  box-shadow: 0 0 0 2.5px rgba(79, 70, 229, 0.15);
+}
+
+.card-paid .jsc-bullet-marker {
+  background: #7c3aed;
+  box-shadow: 0 0 0 2.5px rgba(124, 58, 237, 0.15);
+}
+
+.jsc-feature-item strong {
+  font-weight: 750;
+  color: #0f172a;
+}
+
+/* Bottom Callout in Free Card */
+.jsc-advisory-box {
+  background: #fbf9ff;
+  border: 1.5px solid #d8b4fe;
+  border-radius: 8px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4c1d95;
+  font-size: clamp(11px, 0.85vw, 12px);
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.jsc-advisory-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* Back Return Bar */
+.jsc-back-return-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4px;
+  border-top: 1px dashed #cbd5e1;
+}
+
+.jsc-back-return-btn {
+  font-size: 11px;
+  font-weight: 750;
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+
+.jsc-flip-card:hover .jsc-back-return-btn {
+  color: #0f172a;
+}
+
+/* ========================================================
+   PROMOTION RIBBON (High-Impact Time-Bound Offer)
+   ======================================================== */
+.jsc-promo-ribbon {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 50%, #eff6ff 100%);
+  border: 1.5px solid #c7d2fe;
+  border-radius: 10px;
+  padding: 6px 16px;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.jsc-promo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2.5px 8px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.jsc-promo-text {
+  font-size: clamp(12px, 0.95vw, 13px);
+  font-weight: 750;
+  color: #1e40af;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.jsc-promo-text strong {
+  color: #1d4ed8;
+  font-weight: 850;
+}
+
+/* ========================================================
+   FOOTNOTES SECTION
+   ======================================================== */
+.jsc-footnotes {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 11px;
+  color: #64748b;
+  line-height: 1.35;
+  padding: 2px 4px;
+  flex-shrink: 0;
+}
+
+.jsc-footnote-left {
+  flex: 1;
+}
+
+.jsc-footnote-right {
+  flex: 1.2;
+  text-align: right;
+}
+
+/* ========================================================
+   FOOTER NAVIGATION
+   ======================================================== */
+.jsc-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: clamp(4px, 0.8vh, 8px);
+  border-top: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.jsc-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.jsc-nav-btn:hover {
+  background: #f8fafc;
+  border-color: #6366f1;
+  color: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.jsc-nav-btn.primary {
+  background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(79, 70, 229, 0.25);
+}
+
+.jsc-nav-btn.primary:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #2563eb 100%);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+}
+
+/* ========================================================
+   LIGHTBOX MODAL FOR ORIGINAL SPEC
+   ======================================================== */
+.jsc-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  animation: jscFadeIn 0.2s ease-out;
+}
+
+.jsc-modal-content {
+  position: relative;
+  max-width: 92vw;
+  max-height: 90vh;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.jsc-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.75);
+  color: #ffffff;
+  border: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.jsc-modal-close:hover {
+  background: #0f172a;
+  transform: scale(1.1);
+}
+
+.jsc-modal-img {
+  width: auto;
+  height: auto;
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes jscFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

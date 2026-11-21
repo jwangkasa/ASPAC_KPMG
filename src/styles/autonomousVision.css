@@ -1,0 +1,236 @@
+/* ========================================================
+   AUTONOMOUS ENTERPRISE VISION SLIDE
+   "What is SAP's Autonomous Enterprise vision?"
+   ======================================================== */
+
+.vision-slide-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(16px, 2.2vh, 28px) clamp(28px, 3.6vw, 56px);
+  background: radial-gradient(circle at 85% 15%, #f3eeff 0%, #ffffff 50%, #f6f8fc 100%);
+  color: #0f172a;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Background Subtle Decorative Arc */
+.vision-bg-arc {
+  position: absolute;
+  top: -20vh;
+  left: 36vw;
+  width: 60vw;
+  height: 140vh;
+  border-radius: 50%;
+  border: 1.5px solid rgba(199, 210, 254, 0.5);
+  box-shadow: inset 0 0 80px rgba(224, 231, 255, 0.3);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Main Split Layout */
+.vision-main-layout {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(28px, 3.5vw, 56px);
+  align-items: center;
+  min-height: 0;
+  margin-bottom: clamp(12px, 1.8vh, 18px);
+}
+
+/* ========================================================
+   LEFT COLUMN: Header, Main Title & 3D Diagram
+   ======================================================== */
+.vision-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-right: clamp(10px, 1.5vw, 24px);
+}
+
+.vision-header {
+  margin-bottom: clamp(12px, 1.8vh, 22px);
+}
+
+.vision-sap-logo {
+  width: clamp(70px, 6vw, 95px);
+  height: auto;
+  display: block;
+  margin-bottom: clamp(12px, 1.8vh, 20px);
+  filter: drop-shadow(0 2px 6px rgba(0, 51, 141, 0.15));
+}
+
+.vision-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3.3vw, 52px);
+  font-weight: 750;
+  color: #00186b;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.vision-main-title .title-bold {
+  font-weight: 850;
+  color: #00186b;
+}
+
+.vision-main-title .title-strong {
+  font-weight: 850;
+  color: #00186b;
+  letter-spacing: -0.025em;
+}
+
+/* 3D Diagram Wrapper */
+.vision-diagram-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: clamp(8px, 1.2vh, 16px);
+}
+
+.vision-diagram-img {
+  width: 100%;
+  max-width: 560px;
+  max-height: clamp(260px, 38vh, 420px);
+  object-fit: contain;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  filter: drop-shadow(0 12px 28px rgba(99, 102, 241, 0.1));
+}
+
+.vision-diagram-wrapper:hover .vision-diagram-img {
+  transform: translateY(-4px) scale(1.015);
+}
+
+/* ========================================================
+   RIGHT COLUMN: 3 Key Outcomes / Benefit Cards
+   ======================================================== */
+.vision-right-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-left: clamp(10px, 1.5vw, 24px);
+}
+
+.vision-pillars-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 2.6vh, 32px);
+}
+
+.vision-pillar-card {
+  position: relative;
+  display: flex;
+  gap: clamp(14px, 1.4vw, 20px);
+  align-items: stretch;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: clamp(18px, 2.5vh, 28px) clamp(22px, 2.2vw, 32px);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+  transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.vision-pillar-card:hover {
+  transform: translateX(6px) translateY(-2px);
+  border-color: #6366f1;
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.12), 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.vision-pillar-indicator {
+  width: 5px;
+  border-radius: 999px;
+  flex-shrink: 0;
+  opacity: 0.9;
+  transition: all 0.28s ease;
+}
+
+.vision-pillar-card:hover .vision-pillar-indicator {
+  width: 7px;
+  opacity: 1;
+}
+
+.vision-pillar-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vision-pillar-title {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 1.95vw, 28px);
+  font-weight: 800;
+  color: #00186b;
+  line-height: 1.25;
+  margin: 0 0 clamp(8px, 1.1vh, 12px) 0;
+  letter-spacing: -0.015em;
+}
+
+.vision-pillar-body {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.1vw, 17px);
+  font-weight: 500;
+  color: #334155;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========================================================
+   FOOTER NAVIGATION
+   ======================================================== */
+.vision-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: clamp(8px, 1.2vh, 14px);
+  border-top: 1px solid #e2e8f0;
+}
+
+.vision-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.vision-nav-btn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #00338d;
+  transform: translateY(-1px);
+}
+
+.vision-nav-btn.primary {
+  background: linear-gradient(135deg, #00338d 0%, #00186b 100%);
+  border-color: #002266;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 51, 141, 0.2);
+}
+
+.vision-nav-btn.primary:hover {
+  background: linear-gradient(135deg, #0044b3 0%, #00238c 100%);
+  box-shadow: 0 6px 18px rgba(0, 51, 141, 0.3);
+}

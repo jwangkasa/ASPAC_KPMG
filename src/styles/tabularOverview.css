@@ -1,0 +1,995 @@
+/* ========================================================
+   TABULAR OVERVIEW SLIDE STYLING (ZERO WHITESPACE EXECUTIVE REDESIGN)
+   Native White Architecture Diagram + Slow Readable Stock Tickers
+   ======================================================== */
+
+.tabular-ov-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(6px, 1vh, 12px) clamp(16px, 2vw, 32px);
+  background: #ffffff;
+  color: #0f172a;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: var(--font-body, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+}
+
+/* Architectural top gradient accent */
+.tabular-ov-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00338D 0%, #0284c7 50%, #4f46e5 100%);
+  z-index: 10;
+}
+
+/* Header */
+.tabular-ov-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: clamp(2px, 0.5vh, 6px);
+  gap: 16px;
+}
+
+.tabular-ov-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tabular-ov-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0284c7;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 1.5px 9px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.tabular-ov-title {
+  font-family: var(--font-display, inherit);
+  font-size: clamp(18px, 1.7vw, 24px);
+  font-weight: 850;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.tabular-ov-subtitle {
+  font-size: clamp(11px, 0.75vw, 12.5px);
+  font-weight: 450;
+  color: #475569;
+  margin: 0;
+  max-width: 1100px;
+  line-height: 1.35;
+}
+
+.tabular-ov-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.tabular-ov-badge-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 650;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.tabular-ov-badge-btn.primary {
+  background: #00338D;
+  color: #ffffff;
+  border: 1px solid #002266;
+  box-shadow: 0 2px 6px rgba(0, 51, 141, 0.25);
+}
+
+.tabular-ov-badge-btn.primary:hover {
+  background: #002266;
+}
+
+/* ========================================================
+   MAIN CONTENT SPLIT (Zero Whitespace)
+   Center Stage takes flex: 1, fills all vertical space
+   ======================================================== */
+.tabular-ov-main {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
+  gap: clamp(6px, 1vh, 10px);
+  padding: 2px 0;
+}
+
+/* ========================================================
+   REDESIGNED WHITE BACKGROUND DIAGRAM STAGE (ZERO WHITESPACE)
+   ======================================================== */
+.tabular-ov-diagram-stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.06), 0 1px 4px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: clamp(6px, 0.9vh, 10px);
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(8px, 1.2vh, 14px) clamp(14px, 1.6vw, 24px);
+  box-sizing: border-box;
+}
+
+/* Top Section of Diagram: Title & Subtitle */
+.tabular-ov-diagram-header-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-shrink: 0;
+  padding: 2px 0;
+}
+
+.tabular-ov-diagram-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3px;
+  margin: 0 auto;
+}
+
+.tabular-ov-diagram-main-title {
+  font-family: var(--font-display, inherit);
+  font-size: clamp(26px, 2.4vw, 36px);
+  font-weight: 900;
+  color: #4338ca;
+  margin: 0;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.tabular-ov-diagram-sub-title {
+  font-size: clamp(14px, 1.15vw, 17px);
+  font-weight: 750;
+  color: #0f172a;
+  margin: 0;
+  text-align: center;
+}
+
+.tabular-ov-diagram-sub-title .hl-lang {
+  color: #0284c7;
+  text-decoration: underline;
+  text-decoration-color: #38bdf8;
+  text-underline-offset: 3px;
+}
+
+.tabular-ov-diagram-sub-title .hl-struct {
+  color: #dc2626;
+  text-decoration: underline;
+  text-decoration-color: #f87171;
+  text-underline-offset: 3px;
+}
+
+.tabular-ov-flip-toggle-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: #eff6ff;
+  border: 1.5px solid #bfdbfe;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.12);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tabular-ov-flip-toggle-btn:hover {
+  background: #dbeafe;
+  border-color: #3b82f6;
+  transform: translateY(calc(-50% - 1px));
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* 3 Core Limitations Grid: High Density Cards */
+.tabular-ov-problems-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(8px, 1vw, 14px);
+  flex-shrink: 0;
+}
+
+.tabular-ov-problem-card {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: clamp(7px, 1vh, 10px) clamp(10px, 1.1vw, 14px);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  box-shadow: 0 2px 4px rgba(220, 38, 38, 0.05);
+}
+
+.tabular-ov-problem-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tabular-ov-problem-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ef4444;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.tabular-ov-problem-heading {
+  font-size: clamp(12.5px, 0.95vw, 14.5px);
+  font-weight: 800;
+  color: #991b1b;
+}
+
+.tabular-ov-problem-desc {
+  font-size: clamp(11.5px, 0.82vw, 13px);
+  color: #7f1d1d;
+  line-height: 1.35;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ========================================================
+   3-STAGE 3D FLIP CARDS (Fills Remaining Space)
+   ======================================================== */
+.tabular-ov-flow-container {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: stretch;
+  gap: clamp(8px, 1.1vw, 16px);
+  padding: 2px 0;
+}
+
+/* 3D Flip Card Shell */
+.tabular-ov-flip-card {
+  position: relative;
+  perspective: 1400px;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  cursor: pointer;
+}
+
+.tabular-ov-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.tabular-ov-flip-card.flipped .tabular-ov-flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Card Faces */
+.tabular-ov-card-front,
+.tabular-ov-card-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(6px, 0.8vh, 10px);
+  padding: clamp(8px, 1.2vh, 12px);
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+}
+
+.tabular-ov-card-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.tabular-ov-card-back {
+  z-index: 1;
+  transform: rotateY(180deg);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  padding: clamp(6px, 1vh, 9px) clamp(8px, 1vw, 12px);
+  gap: 4px;
+}
+
+.tabular-ov-card-front.structured,
+.tabular-ov-card-back.structured {
+  border-color: #93c5fd;
+  background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 65%);
+}
+
+.tabular-ov-card-front.tokenized,
+.tabular-ov-card-back.tokenized {
+  border-color: #cbd5e1;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 65%);
+}
+
+.tabular-ov-card-front.predictions,
+.tabular-ov-card-back.predictions {
+  border-color: #fecaca;
+  background: linear-gradient(180deg, #fff5f5 0%, #ffffff 65%);
+}
+
+.tabular-ov-card-flip-hint {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 750;
+  color: #1d4ed8;
+  background: #dbeafe;
+  padding: 1.5px 7px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+}
+
+/* Back Face Content & Points */
+.tabular-ov-back-content {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: clamp(4px, 0.6vh, 6px);
+  padding: 2px 0;
+}
+
+.tabular-ov-back-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: clamp(3px, 0.6vh, 6px) 8px;
+  border-radius: 7px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  flex-shrink: 0;
+}
+
+.point-badge {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 850;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.point-badge.error {
+  background: #ef4444;
+}
+
+.point-title {
+  font-size: clamp(11.5px, 0.82vw, 13px);
+  font-weight: 800;
+  color: #0f172a;
+  display: block;
+  margin-bottom: 1px;
+  line-height: 1.2;
+}
+
+.point-text {
+  font-size: clamp(10.5px, 0.74vw, 11.8px);
+  color: #334155;
+  line-height: 1.32;
+  margin: 0;
+}
+
+.tabular-ov-card-top-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.tabular-ov-stage-pill {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2.5px 9px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.tabular-ov-stage-pill.stage-blue {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.tabular-ov-stage-pill.stage-gray {
+  background: #e2e8f0;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+.tabular-ov-stage-pill.stage-red {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.tabular-ov-flow-label {
+  font-size: clamp(13.5px, 1.05vw, 15.5px);
+  font-weight: 850;
+  margin: 0;
+  line-height: 1.25;
+  color: #0f172a;
+}
+
+/* Stage 1: Structured Visual Table */
+.tabular-ov-table-visual {
+  flex: 1;
+  min-height: 0;
+  background: #ffffff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: clamp(5px, 0.8vh, 8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4px;
+  box-shadow: 0 1px 4px rgba(2, 132, 199, 0.05);
+}
+
+.tabular-ov-table-meta-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2px 3px;
+  border-bottom: 1px solid #e0f2fe;
+}
+
+.tabular-ov-meta-tag {
+  font-size: 11px;
+  font-weight: 800;
+  color: #0369a1;
+  text-transform: uppercase;
+}
+
+.tabular-ov-meta-coord {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #0284c7;
+  background: #e0f2fe;
+  padding: 1.5px 7px;
+  border-radius: 4px;
+}
+
+.tabular-ov-table-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tabular-ov-table-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr 1.3fr 0.9fr;
+  align-items: center;
+  gap: 4px;
+  font-size: clamp(11px, 0.82vw, 12.5px);
+  padding: 3px 6px;
+  border-radius: 4px;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+}
+
+.tabular-ov-table-row.hdr {
+  background: #eff6ff;
+  border-color: #dbeafe;
+  font-weight: 800;
+  color: #1e40af;
+  font-size: clamp(10.5px, 0.78vw, 11.5px);
+}
+
+.cell-id { font-family: monospace; font-weight: 600; color: #475569; }
+.cell-code { font-weight: 600; color: #0f172a; }
+.cell-num { font-weight: 750; font-family: monospace; }
+.cell-num.pos { color: #15803d; }
+.cell-num.neg { color: #b91c1c; }
+.cell-badge.ok {
+  font-size: 10px;
+  font-weight: 800;
+  color: #15803d;
+  background: #dcfce7;
+  padding: 1.5px 6px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Stage 2: Token Visual */
+.tabular-ov-token-visual {
+  flex: 1;
+  min-height: 0;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: clamp(5px, 0.8vh, 8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.tabular-ov-token-meta-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2px 3px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.tabular-ov-token-raw-string {
+  background: #f8fafc;
+  border: 1px dashed #94a3b8;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: clamp(11.5px, 0.85vw, 13px);
+  font-weight: 600;
+  color: #334155;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tabular-ov-token-chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabular-ov-token-chip {
+  padding: 2.5px 7px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: clamp(10.5px, 0.78vw, 12px);
+  font-weight: 750;
+  color: #475569;
+  font-family: monospace;
+}
+
+.tabular-ov-token-chip.split {
+  background: #fff1f2;
+  border-color: #fca5a5;
+  color: #be123c;
+}
+
+/* Stage 3: Broken Predictions Visual */
+.tabular-ov-broken-visual {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  background: #ffffff;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: clamp(5px, 0.8vh, 8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4px;
+  box-shadow: 0 1px 4px rgba(239, 68, 68, 0.05);
+}
+
+.tabular-ov-broken-meta-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2px 3px;
+  border-bottom: 1px solid #fee2e2;
+}
+
+.tabular-ov-meta-tag.error {
+  color: #dc2626;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tabular-ov-meta-coord.error {
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 1.5px 7px;
+  border-radius: 4px;
+}
+
+.tabular-ov-broken-matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5px;
+  position: relative;
+  z-index: 2;
+}
+
+.tabular-ov-broken-item {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1.2fr;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 7px;
+  border-radius: 4px;
+  font-size: clamp(10.5px, 0.78vw, 12px);
+}
+
+.tabular-ov-broken-item.error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+.tabular-ov-broken-item.warn {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+}
+
+.item-label { font-weight: 650; color: #475569; }
+.item-val { font-family: monospace; font-weight: 800; color: #0f172a; }
+.item-tag { font-weight: 800; color: #dc2626; font-size: 10px; text-align: right; }
+
+.tabular-ov-broken-svg {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  width: 90%;
+  height: 50%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.45;
+}
+
+/* Card Summary Bottom Strips */
+.tabular-ov-card-summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: clamp(4px, 0.7vh, 7px) 9px;
+  border-radius: 6px;
+  font-size: clamp(11.5px, 0.84vw, 13px);
+  line-height: 1.35;
+  flex-shrink: 0;
+}
+
+.summary-blue { background: #eff6ff; color: #1e40af; border: 1px solid #dbeafe; }
+.summary-gray { background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0; }
+.summary-red { background: #fef2f2; color: #991b1b; border: 1px solid #fee2e2; }
+
+/* Connectors */
+.tabular-ov-flow-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 4px;
+  align-self: center;
+}
+
+.tabular-ov-connector-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: 1.5px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0284c7;
+  font-weight: 800;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.tabular-ov-connector-badge {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.tabular-ov-connector-sub {
+  font-size: 10px;
+  font-weight: 650;
+  color: #64748b;
+  text-align: center;
+  max-width: 75px;
+}
+
+/* ========================================================
+   STOCK TICKER BOARD - PREDICTIONS (TIGHT & READABLE)
+   ======================================================== */
+.tabular-ov-ticker-section {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+  padding: clamp(4px, 0.6vh, 6px) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.tabular-ov-ticker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(10px, 1.4vw, 18px);
+}
+
+.tabular-ov-ticker-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #00338D;
+}
+
+.tabular-ov-ticker-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tabular-ov-pause-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  font-weight: 650;
+  color: #475569;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 1.5px 7px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tabular-ov-pause-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.tabular-ov-ticker-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #15803d;
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  padding: 1.5px 8px;
+  border-radius: 999px;
+}
+
+.tabular-ov-live-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #16a34a;
+  animation: pulseLive 1.6s infinite;
+}
+
+@keyframes pulseLive {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+/* Continuous Marquee Ticker Track */
+.tabular-ov-marquee-track {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+}
+
+.tabular-ov-marquee-content {
+  display: flex;
+  gap: 8px;
+  animation: scrollLeft 160s linear infinite;
+  white-space: nowrap;
+}
+
+.tabular-ov-marquee-content.reverse {
+  animation: scrollRight 175s linear infinite;
+}
+
+.tabular-ov-marquee-track:hover .tabular-ov-marquee-content,
+.tabular-ov-marquee-content.is-paused {
+  animation-play-state: paused !important;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.tabular-ov-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #1e293b;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.tabular-ov-ticker-symbol {
+  font-family: monospace;
+  font-weight: 800;
+  color: #0284c7;
+  font-size: 10.5px;
+}
+
+.tabular-ov-ticker-metric {
+  font-weight: 750;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.tabular-ov-ticker-metric.up {
+  color: #15803d;
+  background: #f0fdf4;
+}
+
+.tabular-ov-ticker-metric.alert {
+  color: #b45309;
+  background: #fffbeb;
+}
+
+.tabular-ov-ticker-metric.live {
+  color: #0284c7;
+  background: #f0f9ff;
+}
+
+/* ========================================================
+   FOOTER NAVIGATION
+   ======================================================== */
+.tabular-ov-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: clamp(3px, 0.5vh, 6px);
+  border-top: 1px solid #f1f5f9;
+  flex-shrink: 0;
+}
+
+.tabular-ov-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: clamp(4px, 0.7vh, 6px) clamp(12px, 1.2vw, 18px);
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 11.5px;
+  font-weight: 650;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.tabular-ov-nav-btn:hover {
+  background: #f8fafc;
+  border-color: #0284c7;
+  color: #00338D;
+  transform: translateY(-1px);
+}
+
+.tabular-ov-nav-btn.primary {
+  background: #00338D;
+  color: #ffffff;
+  border-color: #002266;
+  box-shadow: 0 2px 6px rgba(0, 51, 141, 0.25);
+}
+
+.tabular-ov-nav-btn.primary:hover {
+  background: #002266;
+  color: #ffffff;
+}

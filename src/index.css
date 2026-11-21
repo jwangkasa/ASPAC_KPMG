@@ -1,0 +1,27 @@
+:root {
+  --navy-900: #060d2b;
+  --navy-800: #0a1238;
+  --navy-700: #0d1b4d;
+  --gold: #c9a24b;
+  --red: #c8372d;
+  --ink: #ffffff;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 14px;
+}
+
+html, body, #root { height: 100%; width: 100%; }
+
+body {
+  background: var(--navy-900);
+  color: var(--ink);
+  font-family: var(--font-body);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}

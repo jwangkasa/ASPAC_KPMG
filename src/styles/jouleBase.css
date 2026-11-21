@@ -1,0 +1,812 @@
+/* ========================================================
+   JOULE BASE SLIDE STYLING (EXECUTIVE CLEAN WHITE)
+   Base AI: Included foundational AI — no AI Units required
+   Two Simple Paths: Joule Basic Orchestration & Embedded AI
+   ======================================================== */
+
+.jb-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(10px, 1.4vh, 18px) clamp(22px, 2.8vw, 44px);
+  background: radial-gradient(circle at 50% 0%, #f0f7ff 0%, #ffffff 60%, #f8fafc 100%);
+  color: #0f172a;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: var(--font-body, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+}
+
+/* Subtle architectural top accent bar */
+.jb-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00338D 0%, #0284c7 45%, #38bdf8 75%, #00338D 100%);
+  z-index: 10;
+}
+
+/* Header */
+.jb-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: clamp(4px, 0.8vh, 8px);
+}
+
+.jb-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.jb-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0284c7;
+  background: #e0f2fe;
+  border: 1px solid #bae6fd;
+  padding: 2.5px 12px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.jb-main-title {
+  font-family: var(--font-display, inherit);
+  font-size: clamp(24px, 2.5vw, 36px);
+  font-weight: 900;
+  color: #00338D;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.jb-main-subtitle {
+  font-size: clamp(14px, 1.1vw, 17px);
+  font-weight: 700;
+  color: #0369a1;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.jb-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.jb-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 750;
+  color: #15803d;
+  box-shadow: 0 1px 3px rgba(22, 163, 74, 0.08);
+}
+
+.jb-badge-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.jb-badge-btn:hover {
+  background: #f8fafc;
+  border-color: #0284c7;
+  color: #00338D;
+  transform: translateY(-1px);
+}
+
+/* ========================================================
+   MAIN CONTENT
+   Center Stage: Central Connecting Ribbon + 2 Large Path Cards
+   ======================================================== */
+.jb-main {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
+  gap: clamp(8px, 1.2vh, 14px);
+  padding: 2px 0;
+}
+
+/* Central Bridge / Connecting Ribbon */
+.jb-connector-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.jb-connector-line {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  border-top: 2px dashed #93c5fd;
+  z-index: 0;
+}
+
+.jb-connector-pill {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 5px 22px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.jb-flip-all-btn {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 16px;
+  border-radius: 999px;
+  border: 1.5px solid #0284c7;
+  background: #ffffff;
+  color: #0284c7;
+  font-size: 11.5px;
+  font-weight: 750;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.15);
+  transition: all 0.2s ease;
+}
+
+.jb-flip-all-btn:hover {
+  background: #0284c7;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+/* Two Columns Split Grid */
+.jb-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(14px, 2vw, 28px);
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  flex: 1;
+  min-height: 0;
+}
+
+/* ========================================================
+   3D FLIP CARD ARCHITECTURE
+   ======================================================== */
+.jb-flip-card-container {
+  perspective: 1400px;
+  height: 100%;
+  min-height: 0;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+.jb-flip-card-container:focus-visible {
+  outline: 2px solid #0284c7;
+  outline-offset: 4px;
+  border-radius: 16px;
+}
+
+.jb-flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.65s cubic-bezier(0.34, 1.25, 0.64, 1);
+  transform-style: preserve-3d;
+}
+
+.jb-flip-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.jb-flip-card-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: clamp(12px, 1.6vh, 20px) clamp(16px, 2vw, 24px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px -4px rgba(2, 132, 199, 0.08), 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.jb-flip-card-face.orchestration {
+  border: 1.5px solid #bfdbfe;
+}
+
+.jb-flip-card-face.embedded {
+  border: 1.5px solid #c7d2fe;
+}
+
+.jb-flip-card-container:hover .jb-flip-card-face.orchestration {
+  border-color: #0284c7;
+  box-shadow: 0 14px 32px -4px rgba(2, 132, 199, 0.16), 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.jb-flip-card-container:hover .jb-flip-card-face.embedded {
+  border-color: #6366f1;
+  box-shadow: 0 14px 32px -4px rgba(79, 70, 229, 0.16), 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Front Face */
+.jb-flip-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+/* Back Face */
+.jb-flip-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+/* Front Face Overview Content */
+.jb-front-overview {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.4vh, 16px);
+  margin-top: clamp(12px, 1.8vh, 18px);
+}
+
+.jb-front-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.jb-front-status-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11.5px;
+  font-weight: 750;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.jb-front-status-badge.outline {
+  background: #f0f9ff;
+  color: #0369a1;
+  border-color: #bae6fd;
+}
+
+.jb-front-status-badge.purple {
+  background: #faf5ff;
+  color: #6b21a8;
+  border-color: #d8b4fe;
+}
+
+.jb-front-status-badge.outline.purple {
+  background: #eef2ff;
+  color: #4338ca;
+  border-color: #c7d2fe;
+}
+
+.jb-front-summary-p {
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.5;
+  color: #334155;
+  margin: 0;
+}
+
+.jb-front-summary-p strong {
+  color: #0f172a;
+  font-weight: 750;
+}
+
+.jb-front-highlights-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.jb-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: clamp(10px, 1.3vh, 14px);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.jb-highlight-item:hover {
+  background: #f0f7ff;
+  border-color: #93c5fd;
+}
+
+.jb-highlight-item.purple:hover {
+  background: #f5f3ff;
+  border-color: #c7d2fe;
+}
+
+.jb-highlight-icon {
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.jb-highlight-item strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 750;
+  color: #0f172a;
+  margin-bottom: 3px;
+}
+
+.jb-highlight-item p {
+  font-size: 11.5px;
+  line-height: 1.35;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Flip Call-to-Action Bar (at bottom of front card) */
+.jb-flip-cta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border: 1px dashed #7dd3fc;
+  margin-top: clamp(12px, 1.8vh, 18px);
+}
+
+.jb-flip-cta-bar.purple {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  border-color: #c4b5fd;
+}
+
+.jb-flip-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #0284c7;
+}
+
+.jb-flip-cta-btn.purple {
+  color: #6366f1;
+}
+
+.jb-flip-cta-arrow {
+  font-size: 16px;
+  font-weight: 900;
+  transition: transform 0.3s ease;
+}
+
+.jb-flip-card-container:hover .jb-flip-cta-arrow {
+  transform: rotate(180deg);
+}
+
+.jb-flip-cta-hint {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+/* Card Header with Top Pin */
+.jb-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding-bottom: clamp(8px, 1.1vh, 12px);
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.jb-card-header.back-header {
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+}
+
+.jb-card-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.jb-flip-return-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 750;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.jb-flip-return-btn:hover {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+}
+
+.jb-flip-card-face.embedded .jb-flip-return-btn:hover {
+  background: #6366f1;
+  color: #ffffff;
+  border-color: #6366f1;
+}
+
+.jb-card-icon-node {
+  width: clamp(40px, 3.2vw, 48px);
+  height: clamp(40px, 3.2vw, 48px);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0284c7 0%, #00338D 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+.jb-card-icon-node.small {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.jb-flip-card-face.embedded .jb-card-icon-node {
+  background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.jb-card-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.jb-card-title {
+  font-family: var(--font-display, inherit);
+  font-size: clamp(18px, 1.4vw, 22px);
+  font-weight: 850;
+  color: #00338D;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.jb-card-title.small {
+  font-size: clamp(15px, 1.15vw, 17px);
+}
+
+.jb-flip-card-face.embedded .jb-card-title {
+  color: #3730a3;
+}
+
+.jb-card-tag {
+  font-size: 13px;
+  font-weight: 750;
+  color: #0284c7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.jb-flip-card-face.embedded .jb-card-tag {
+  color: #6366f1;
+}
+
+/* Card Content Blocks (What it is, Entitlement & access, What it enables) */
+.jb-sections-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.4vh, 16px);
+  margin-top: clamp(8px, 1.2vh, 14px);
+  flex: 1;
+}
+
+.jb-section-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.jb-section-label {
+  font-size: 13px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jb-section-label::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #0284c7;
+}
+
+.jb-path-card.embedded .jb-section-label::before,
+.jb-flip-card-face.embedded .jb-section-label::before {
+  background: #6366f1;
+}
+
+.jb-section-p {
+  font-size: clamp(14px, 1.05vw, 15px);
+  line-height: 1.48;
+  color: #334155;
+  margin: 0;
+}
+
+.jb-section-p strong {
+  color: #0f172a;
+  font-weight: 750;
+}
+
+/* List with crisp bullet checks */
+.jb-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.jb-bullet-item {
+  position: relative;
+  padding-left: 20px;
+  font-size: clamp(13px, 1vw, 15px);
+  line-height: 1.45;
+  color: #334155;
+}
+
+.jb-bullet-item::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 13px;
+  font-weight: 900;
+  color: #0284c7;
+}
+
+.jb-path-card.embedded .jb-bullet-item::before,
+.jb-flip-card-face.embedded .jb-bullet-item::before {
+  color: #6366f1;
+}
+
+.jb-bullet-item strong {
+  color: #0f172a;
+}
+
+/* Card Bottom Pill Badges */
+.jb-card-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-top: clamp(6px, 1vh, 10px);
+  border-top: 1px solid #f1f5f9;
+}
+
+.jb-feature-pill {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2.5px 9px;
+  border-radius: 999px;
+  background: #f0f7ff;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.jb-path-card.embedded .jb-feature-pill,
+.jb-flip-card-face.embedded .jb-feature-pill {
+  background: #eef2ff;
+  color: #4338ca;
+  border-color: #c7d2fe;
+}
+
+/* ========================================================
+   BOTTOM SUMMARY BANNER
+   ======================================================== */
+.jb-summary-strip {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+  padding: clamp(6px, 1vh, 10px) clamp(16px, 2vw, 24px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1380px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.jb-summary-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #334155;
+}
+
+.jb-summary-icon {
+  font-size: 14px;
+}
+
+.jb-summary-item strong {
+  color: #0f172a;
+}
+
+/* ========================================================
+   FOOTER (EXECUTIVE CLEAN WHITE)
+   ======================================================== */
+.jb-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: clamp(6px, 0.9vh, 10px);
+  border-top: 1px solid #e2e8f0;
+}
+
+.jb-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 650;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.jb-nav-btn:hover {
+  background: #f8fafc;
+  border-color: #0284c7;
+  color: #00338D;
+  transform: translateY(-1px);
+}
+
+.jb-nav-btn.primary {
+  background: #00338D;
+  color: #ffffff;
+  border: 1px solid #002266;
+  box-shadow: 0 2px 6px rgba(0, 51, 141, 0.25);
+}
+
+.jb-nav-btn.primary:hover {
+  background: #002266;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 51, 141, 0.35);
+}
+
+/* Lightbox Modal */
+.jb-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+.jb-modal-content {
+  position: relative;
+  max-width: 96vw;
+  max-height: 94vh;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jb-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(15, 23, 42, 0.1);
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  color: #0f172a;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.jb-modal-close:hover {
+  background: rgba(15, 23, 42, 0.2);
+  transform: scale(1.08);
+}
+
+.jb-modal-img {
+  width: 100%;
+  height: auto;
+  max-height: 86vh;
+  object-fit: contain;
+  border-radius: 8px;
+}

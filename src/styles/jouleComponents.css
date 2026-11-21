@@ -1,0 +1,284 @@
+/* ========================================================
+   Joule Components Page Styles
+   Clean White 2-Column Layout with 3 Component Cards
+   ======================================================== */
+
+.joule-comp-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(10px, 1.4vh, 20px) clamp(16px, 2.5vw, 36px);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Header */
+.joule-comp-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: clamp(2px, 0.4vh, 8px);
+  margin-bottom: clamp(6px, 1vh, 12px);
+}
+
+.joule-comp-header-text {
+  text-align: left;
+}
+
+.joule-comp-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: clamp(10px, 0.8vw, 12px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.08);
+  padding: 3px 12px;
+  border-radius: 999px;
+  margin-bottom: 4px;
+}
+
+.joule-comp-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 2.4vw, 36px);
+  font-weight: 850;
+  color: #00186b;
+  margin: 0 0 2px 0;
+  letter-spacing: -0.02em;
+}
+
+.joule-comp-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(12px, 0.9vw, 14px);
+  font-weight: 500;
+  color: #475569;
+  margin: 0;
+  line-height: 1.4;
+  max-width: 700px;
+}
+
+/* Main 2-Column Stage */
+.joule-comp-main {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: clamp(4px, 0.8vh, 10px) 0;
+}
+
+.joule-comp-grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(310px, 360px);
+  gap: clamp(16px, 2vw, 28px);
+  align-items: center;
+  width: 100%;
+  max-width: 1260px;
+  height: 100%;
+  max-height: clamp(390px, 64vh, 550px);
+}
+
+/* Left: Image Card */
+.joule-comp-image-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  padding: clamp(8px, 1.2vh, 16px);
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.07), 0 2px 6px rgba(15, 23, 42, 0.03);
+  cursor: pointer;
+  transition: all 0.26s cubic-bezier(0.2, 0.8, 0.2, 1);
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.joule-comp-image-card:hover {
+  transform: translateY(-2px);
+  border-color: #818cf8;
+  box-shadow: 0 14px 38px rgba(124, 58, 237, 0.14), 0 0 18px rgba(99, 102, 241, 0.18);
+}
+
+.joule-comp-main-img {
+  width: 100%;
+  height: 100%;
+  max-height: clamp(360px, 60vh, 510px);
+  object-fit: contain;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+  transition: transform 0.22s ease;
+}
+
+.joule-comp-image-card:hover .joule-comp-main-img {
+  transform: scale(1.006);
+}
+
+.joule-comp-zoom-hint {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  color: #475569;
+  background: rgba(255, 255, 255, 0.94);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  pointer-events: none;
+}
+
+/* Right: 3 Component Cards Column */
+.joule-comp-cards-column {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.4vh, 14px);
+  height: 100%;
+  justify-content: center;
+}
+
+.joule-feature-card {
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: clamp(14px, 1.8vh, 18px) clamp(16px, 1.8vw, 20px);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+  transition: all 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-sizing: border-box;
+}
+
+.joule-feature-card:hover {
+  transform: translateY(-2px);
+  border-color: #818cf8;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.12), 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.joule-feature-card.conversations {
+  border-left: 4px solid #7c3aed;
+}
+
+.joule-feature-card.spaces {
+  border-left: 4px solid #2563eb;
+}
+
+.joule-feature-card.develop {
+  border-left: 4px solid #0891b2;
+}
+
+.joule-feature-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.joule-feature-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 3px;
+  flex-shrink: 0;
+}
+
+.joule-feature-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.joule-feature-title {
+  font-family: var(--font-display);
+  font-size: clamp(15px, 1.15vw, 17px);
+  font-weight: 750;
+  color: #00186b;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.joule-feature-body {
+  font-family: var(--font-body);
+  font-size: clamp(12px, 0.88vw, 13.8px);
+  line-height: 1.48;
+  color: #475569;
+  margin: 0;
+  font-weight: 450;
+}
+
+/* Footer Navigation */
+.joule-comp-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: clamp(6px, 1vh, 12px);
+  border-top: 1px solid #f1f5f9;
+}
+
+.joule-comp-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #00186b;
+  font-family: var(--font-body);
+  font-size: clamp(12px, 0.85vw, 13px);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.joule-comp-nav-btn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+.joule-comp-nav-btn.primary {
+  background: linear-gradient(135deg, #00186b 0%, #003899 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(0, 24, 107, 0.25);
+}
+
+.joule-comp-nav-btn.primary:hover {
+  background: linear-gradient(135deg, #002288 0%, #004bb8 100%);
+  box-shadow: 0 6px 18px rgba(0, 24, 107, 0.35);
+}
+
+/* Responsive adjustment */
+@media (max-width: 1024px) {
+  .joule-comp-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    overflow-y: auto;
+  }
+}

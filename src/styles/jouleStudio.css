@@ -1,0 +1,757 @@
+/* ==========================================================================
+   JOULE STUDIO (MANAGED PLATFORM OFFERING FOR AGENTIC WORKLOADS)
+   Live Interactive Enterprise Architecture Canvas
+   High-Legibility Executive Typography • Zero Hollow Whitespace
+   KPMG × SAP Executive Presentation Design System
+   ========================================================================== */
+
+.js-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  background: radial-gradient(circle at 10% 12%, rgba(99, 102, 241, 0.08) 0%, transparent 45%),
+              radial-gradient(circle at 90% 88%, rgba(14, 165, 233, 0.08) 0%, transparent 45%),
+              linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  color: #0f172a;
+  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(8px, 1.2vh, 14px) clamp(20px, 2.5vw, 40px) clamp(6px, 1vh, 12px);
+}
+
+/* Ambient glows */
+.js-ambient-left {
+  position: absolute;
+  top: -60px;
+  left: 5%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(50px);
+}
+
+.js-ambient-right {
+  position: absolute;
+  bottom: 0px;
+  right: 5%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(50px);
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.js-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: clamp(4px, 0.7vh, 8px);
+  padding-bottom: clamp(4px, 0.6vh, 6px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+.js-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.js-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.80rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #4f46e5;
+  background: rgba(99, 102, 241, 0.1);
+  padding: 2px 10px;
+  border-radius: 9999px;
+  width: fit-content;
+  border: 1px solid rgba(99, 102, 241, 0.22);
+}
+
+.js-main-title {
+  font-size: clamp(20px, 1.85vw, 25px);
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  margin: 0;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #4338ca 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.18;
+}
+
+.js-main-subtitle {
+  font-size: clamp(12.5px, 0.9vw, 14px);
+  color: #475569;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.js-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Layer Focus Tab Buttons */
+.js-focus-btn-group {
+  display: flex;
+  background: #ffffff;
+  padding: 3px;
+  border-radius: 9px;
+  border: 1.5px solid #cbd5e1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.js-focus-btn {
+  padding: 4px 12px;
+  border: none;
+  background: transparent;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #64748b;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.js-focus-btn.active {
+  background: #4f46e5;
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(79, 70, 229, 0.35);
+}
+
+.js-spec-modal-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 5px 12px;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 9px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.js-spec-modal-btn:hover {
+  background: #f8fafc;
+  border-color: #4f46e5;
+  color: #4f46e5;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   MASTER ARCHITECTURE CANVAS
+   Proportional, Executive Layout with Zero Empty Voids
+   ========================================================================== */
+.js-canvas {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(8px, 1.2vh, 12px);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Dimmed state for layer filtering */
+.js-layer-card.dimmed,
+.js-studio-wrapper.dimmed,
+.js-sublayer-box.dimmed {
+  opacity: 0.35;
+  filter: grayscale(0.2);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Base style for cards */
+.js-layer-card {
+  background: #f0f7ff;
+  border: 1.5px solid #bae6fd;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s ease;
+}
+
+/* ==========================================================================
+   LAYER 1: JOULE WORK
+   ========================================================================== */
+.layer-joule-work {
+  padding: clamp(6px, 0.8vh, 9px) 18px;
+  background: #f0f7ff;
+  border: 1.5px solid #bae6fd;
+  flex-shrink: 0;
+}
+
+.js-work-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.js-work-title {
+  font-size: clamp(14.5px, 1.1vw, 16.5px);
+  font-weight: 850;
+  color: #0369a1;
+  letter-spacing: -0.01em;
+}
+
+.js-work-tabs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: clamp(12.5px, 0.9vw, 14px);
+  font-weight: 650;
+  color: #334155;
+}
+
+.js-work-tab {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.js-work-tab.active {
+  color: #4f46e5;
+  font-weight: 800;
+}
+
+.js-work-sep {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* ==========================================================================
+   LAYER 2: JOULE STUDIO (Core Managed Agent Platform)
+   Increased Font-Size, Snug Layout, Zero Empty Whitespace
+   ========================================================================== */
+.js-studio-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 0.9vh, 10px);
+  background: #f5f3ff;
+  border: 1.5px solid #d8b4fe;
+  border-radius: 14px;
+  padding: clamp(8px, 1.1vh, 12px) clamp(12px, 1.2vw, 16px);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.08);
+}
+
+.js-studio-main-title {
+  text-align: center;
+  font-size: clamp(16px, 1.3vw, 19px);
+  font-weight: 850;
+  color: #5b21b6;
+  letter-spacing: -0.015em;
+  padding-bottom: 1px;
+}
+
+/* Sub-Layer Boxes: Design time & Runtime */
+.js-sublayer-box {
+  display: flex;
+  align-items: stretch;
+  background: #ffffff;
+  border: 1.5px solid #e9d5ff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.03);
+  transition: all 0.2s ease;
+  min-height: auto;
+}
+
+/* Left Sidebar Pillar Label */
+.js-sublayer-sidebar {
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  padding: 6px 0;
+}
+
+.js-sublayer-sidebar.sidebar-indigo {
+  background: linear-gradient(180deg, #4f46e5 0%, #3730a3 100%);
+}
+
+.sidebar-vertical-text {
+  position: absolute;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #ffffff;
+  line-height: 1;
+}
+
+/* Sublayer Content Area */
+.js-sublayer-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(8px, 1.1vh, 12px) clamp(14px, 1.4vw, 20px);
+  min-width: 0;
+  gap: clamp(6px, 0.9vh, 9px);
+}
+
+.js-section-heading {
+  text-align: center;
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: 850;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* Design Modules 3-Cards Grid */
+.js-design-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(8px, 1.1vw, 14px);
+  flex-shrink: 0;
+}
+
+.js-module-card {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  padding: clamp(6px, 0.8vh, 9px) 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.js-module-card:hover,
+.js-module-card.highlighted {
+  border-color: #6366f1;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+  transform: translateY(-1px);
+}
+
+.js-module-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.js-module-icon {
+  font-size: 16px;
+}
+
+.js-module-name {
+  font-size: clamp(13.5px, 1.05vw, 15px);
+  font-weight: 850;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+.n8n-tag {
+  color: #ea580c;
+  font-weight: 900;
+}
+
+.js-module-items-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: clamp(12px, 0.88vw, 13px);
+  font-weight: 650;
+  color: #334155;
+  line-height: 1.35;
+}
+
+.item-sep {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.tech-badge {
+  font-size: clamp(12px, 0.88vw, 13px);
+  font-weight: 750;
+}
+.tech-badge.cap { color: #1e40af; }
+.tech-badge.react { color: #0284c7; }
+.tech-badge.next { color: #0f172a; }
+
+/* Tooling / Developer Row */
+.js-tooling-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: clamp(12px, 0.88vw, 13px);
+  font-weight: 650;
+  color: #475569;
+  margin-top: 1px;
+  flex-wrap: wrap;
+}
+
+.js-tooling-primary {
+  font-weight: 800;
+  color: #0f172a;
+  font-size: clamp(12.5px, 0.9vw, 13.5px);
+}
+
+.js-ide-logos {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.js-ide-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: clamp(12px, 0.88vw, 13px);
+  font-weight: 750;
+  color: #334155;
+}
+
+.ide-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.ide-dot.cursor { background: #3b82f6; }
+.ide-dot.cline { background: #10b981; }
+.ide-triangle { color: #000000; font-size: 9px; }
+.ide-sparkle { color: #ea580c; font-size: 11px; }
+.ide-dot.vscode { background: #007acc; }
+
+/* Unified Runtime Card (Single White Card with 4 Columns) */
+.js-unified-runtime-card {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  padding: clamp(7px, 1vh, 10px) 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.js-runtime-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-align: center;
+}
+
+.js-runtime-heading {
+  font-size: clamp(13px, 0.98vw, 14.5px);
+  font-weight: 850;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+.js-runtime-values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  font-size: clamp(11.5px, 0.85vw, 12.8px);
+  font-weight: 650;
+  color: #334155;
+  line-height: 1.35;
+}
+
+.js-runtime-col-divider {
+  width: 1.5px;
+  height: 32px;
+  background: #cbd5e1;
+  flex-shrink: 0;
+}
+
+/* Underlying Infrastructure Row */
+.js-infra-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: clamp(12px, 0.88vw, 13.2px);
+  font-weight: 700;
+  color: #475569;
+  margin-top: 1px;
+  flex-wrap: wrap;
+}
+
+.js-infra-item {
+  color: #1e293b;
+}
+
+/* ==========================================================================
+   LAYER 3: INTEGRATION SUITE & BDC
+   ========================================================================== */
+.layer-integration {
+  padding: clamp(6px, 0.8vh, 9px) 18px;
+  background: #f0f7ff;
+  border: 1.5px solid #bae6fd;
+  flex-shrink: 0;
+}
+
+.js-integration-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.js-integration-half {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.js-integ-name {
+  font-size: clamp(13px, 0.98vw, 14.5px);
+  font-weight: 850;
+  color: #0f172a;
+}
+
+.js-integ-desc {
+  font-size: clamp(11.5px, 0.85vw, 12.8px);
+  color: #64748b;
+  font-weight: 550;
+}
+
+.js-integ-divider {
+  width: 1.5px;
+  height: 22px;
+  background: #bae6fd;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   LAYER 4: ENTERPRISE ECOSYSTEM
+   ========================================================================== */
+.layer-ecosystem {
+  padding: clamp(6px, 0.8vh, 9px) 18px;
+  background: #f0f7ff;
+  border: 1.5px solid #bae6fd;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.js-eco-title {
+  font-size: clamp(12.5px, 0.9vw, 14px);
+  font-weight: 850;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+.js-ecosystem-nodes {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.4vw, 18px);
+}
+
+.js-eco-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  background: #ffffff;
+  border: 1.5px solid #0284c7;
+  color: #0284c7;
+  box-shadow: 0 1px 3px rgba(2, 132, 199, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.js-eco-circle:hover {
+  transform: scale(1.15);
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
+}
+
+/* ==========================================================================
+   FOOTER NAVIGATION
+   ========================================================================== */
+.js-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: clamp(4px, 0.6vh, 6px);
+  border-top: 1px solid rgba(226, 232, 240, 0.9);
+  flex-shrink: 0;
+}
+
+.js-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: clamp(4px, 0.6vh, 6px) clamp(12px, 1.3vw, 18px);
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 9px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.js-nav-btn:hover {
+  background: #f8fafc;
+  border-color: #4f46e5;
+  color: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.js-nav-btn.primary {
+  background: #00338D;
+  color: #ffffff;
+  border-color: #002266;
+  box-shadow: 0 2px 5px rgba(0, 51, 141, 0.2);
+}
+
+.js-nav-btn.primary:hover {
+  background: #002266;
+}
+
+/* ==========================================================================
+   LIGHTBOX MODAL
+   ========================================================================== */
+.js-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.js-modal-content {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  max-width: 94vw;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.js-modal-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.js-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 750;
+  color: #0f172a;
+}
+
+.js-modal-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4f46e5;
+}
+
+.js-modal-close {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.js-modal-close:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.js-modal-img-container {
+  padding: 1rem;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.js-modal-img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

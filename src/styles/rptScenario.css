@@ -1,0 +1,515 @@
+/* ==========================================================================
+   SAP SCENARIOS WITH SAP-RPT (SlideRptScenario)
+   Pre-trained Tabular Foundation Models in Action
+   Executive Presentation Design System - KPMG x SAP Tokyo Summit 2026
+   ========================================================================== */
+
+.rpt-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  background: radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+              radial-gradient(circle at 90% 90%, rgba(14, 165, 233, 0.06) 0%, transparent 40%),
+              linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  color: #0f172a;
+  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(6px, 1.2vh, 12px) clamp(16px, 2.4vw, 40px);
+  box-sizing: border-box;
+}
+
+/* Ambient glow accents */
+.rpt-ambient-left {
+  position: absolute;
+  top: -8%;
+  left: -5%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.rpt-ambient-right {
+  position: absolute;
+  top: 15%;
+  right: -5%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, rgba(14, 165, 233, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ==========================================================================
+   Header Section
+   ========================================================================== */
+.rpt-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.rpt-title-group {
+  max-width: 1040px;
+}
+
+.rpt-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.28rem 0.85rem;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.28);
+  border-radius: 9999px;
+  font-size: clamp(0.78rem, 0.72vw, 0.88rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #4f46e5;
+  margin-bottom: 0.25rem;
+}
+
+.rpt-main-title {
+  font-size: clamp(2rem, 2.25vw, 2.6rem);
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  line-height: 1.15;
+  margin: 0 0 0.25rem;
+}
+
+.rpt-main-title .highlight-rpt {
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.rpt-main-subtitle {
+  font-size: clamp(0.96rem, 1vw, 1.12rem);
+  color: #475569;
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 450;
+  max-width: 1060px;
+}
+
+.rpt-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+  padding-top: 0.2rem;
+}
+
+.rpt-filter-btn-group {
+  display: flex;
+  background: #ffffff;
+  padding: 0.25rem;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.rpt-filter-btn {
+  padding: 0.35rem 0.75rem;
+  border: none;
+  background: transparent;
+  font-size: clamp(0.82rem, 0.8vw, 0.92rem);
+  font-weight: 650;
+  color: #64748b;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rpt-filter-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(37, 99, 235, 0.3);
+}
+
+.rpt-spec-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.85rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: clamp(0.85rem, 0.82vw, 0.95rem);
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.rpt-spec-btn:hover {
+  background: #f8fafc;
+  border-color: #2563eb;
+  color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.15);
+}
+
+/* ==========================================================================
+   Main Showcase Grid (2 Rows of 4 Cards)
+   ========================================================================== */
+.rpt-grid-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.35rem, 0.8vh, 0.65rem);
+  flex: 1;
+  justify-content: center;
+  min-height: 0;
+}
+
+/* 4-Card Row Grid */
+.rpt-cards-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(0.75rem, 1.1vw, 1.1rem);
+}
+
+/* Individual Scenario Card */
+.rpt-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: clamp(0.8rem, 1.2vh, 1.15rem) clamp(0.95rem, 1.2vw, 1.3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+  min-height: clamp(170px, 22.5vh, 220px);
+}
+
+.rpt-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Top Row Cards: Soft Purple / Lavender Glow Border */
+.rpt-card.card-available {
+  border: 1.5px solid rgba(168, 85, 247, 0.35);
+  background: linear-gradient(180deg, #ffffff 0%, #faf5ff 100%);
+}
+
+.rpt-card.card-available:hover {
+  border-color: #a855f7;
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.16);
+}
+
+/* Bottom Row Cards: Soft Sky Blue / Cyan Border */
+.rpt-card.card-planned {
+  border: 1.5px solid rgba(14, 165, 233, 0.45);
+  background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+}
+
+.rpt-card.card-planned:hover {
+  border-color: #0284c7;
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.18);
+}
+
+/* Card Header */
+.rpt-card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.rpt-card-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.rpt-card-title {
+  font-size: clamp(1.12rem, 1.15vw, 1.32rem);
+  font-weight: 850;
+  letter-spacing: -0.015em;
+  line-height: 1.22;
+  margin: 0;
+}
+
+.rpt-card.card-available .rpt-card-title {
+  color: #4338ca;
+}
+
+.rpt-card.card-planned .rpt-card-title {
+  color: #0284c7;
+}
+
+.rpt-card-icon {
+  font-size: clamp(1.2rem, 1.25vw, 1.45rem);
+  opacity: 0.9;
+}
+
+.rpt-card-subtitle {
+  font-size: clamp(0.82rem, 0.82vw, 0.92rem);
+  color: #64748b;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Card Quote / Body */
+.rpt-card-quote {
+  font-size: clamp(0.88rem, 0.9vw, 1.02rem);
+  color: #334155;
+  line-height: 1.42;
+  margin: 0 0 0.5rem;
+  font-weight: 450;
+  flex: 1;
+}
+
+.rpt-card-quote .quote-hl {
+  color: #4f46e5;
+  font-weight: 750;
+}
+
+.rpt-card.card-planned .rpt-card-quote .quote-hl {
+  color: #0284c7;
+  font-weight: 750;
+}
+
+/* Card Footer / Status Badge */
+.rpt-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.45rem;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.rpt-status-badge {
+  font-size: clamp(0.82rem, 0.82vw, 0.94rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.rpt-status-badge.status-ga {
+  color: #4f46e5;
+}
+
+.rpt-status-badge.status-eac {
+  color: #4f46e5;
+}
+
+.rpt-status-badge.status-beta {
+  color: #4f46e5;
+}
+
+.rpt-status-badge.status-planned {
+  color: #0284c7;
+}
+
+.rpt-status-pill {
+  font-size: clamp(0.72rem, 0.72vw, 0.82rem);
+  font-weight: 750;
+  padding: 0.16rem 0.55rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.rpt-status-pill.pill-live {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.rpt-status-pill.pill-preview {
+  background: #e0e7ff;
+  color: #3730a3;
+  border: 1px solid #a5b4fc;
+}
+
+.rpt-status-pill.pill-roadmap {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #7dd3fc;
+}
+
+/* ==========================================================================
+   Divider: "More coming soon"
+   ========================================================================== */
+.rpt-divider-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0.25rem 0;
+}
+
+.rpt-divider-text {
+  font-size: clamp(0.95rem, 0.98vw, 1.12rem);
+  font-style: italic;
+  font-weight: 750;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.rpt-divider-line {
+  flex: 1;
+  height: 0;
+  border-top: 1.5px dashed #cbd5e1;
+}
+
+/* ==========================================================================
+   Footer Section
+   ========================================================================== */
+.rpt-footer {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.4rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.rpt-disclaimer {
+  font-size: clamp(0.76rem, 0.75vw, 0.86rem);
+  color: #64748b;
+  font-style: italic;
+  max-width: 680px;
+  line-height: 1.35;
+}
+
+.rpt-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.rpt-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 1.05rem;
+  border-radius: 8px;
+  font-size: clamp(0.88rem, 0.88vw, 1rem);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  color: #334155;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.rpt-nav-btn:hover {
+  background: #f8fafc;
+  border-color: #2563eb;
+  color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.rpt-nav-btn.primary {
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+}
+
+.rpt-nav-btn.primary:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #4338ca 100%);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+/* ==========================================================================
+   Lightbox Modal for Spec Preview
+   ========================================================================== */
+.rpt-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.rpt-modal-content {
+  position: relative;
+  max-width: 95vw;
+  max-height: 90vh;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.rpt-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.rpt-modal-header span {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.rpt-modal-close {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.rpt-modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.rpt-modal-body {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e293b;
+  overflow: auto;
+}
+
+.rpt-modal-img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 8px;
+}

@@ -1,0 +1,346 @@
+/* ========================================================
+   GROW WITH SAP - SLIDE 17
+   "Agent-led transformation in GROW with SAP"
+   ======================================================== */
+
+.grow-sap-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(14px, 2vh, 24px) clamp(24px, 3.2vw, 48px);
+  background: radial-gradient(circle at 50% 0%, #f5faf8 0%, #ffffff 60%, #f1f7f5 100%);
+  color: #0f172a;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+}
+
+/* Background ambient glows */
+.grow-sap-glow-emerald {
+  position: absolute;
+  top: -8%;
+  right: -5%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.grow-sap-glow-purple {
+  position: absolute;
+  bottom: -8%;
+  left: -5%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Slide Header */
+.grow-sap-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: clamp(6px, 1vh, 12px);
+}
+
+.grow-sap-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.grow-sap-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #059669;
+  background: rgba(16, 185, 129, 0.09);
+  padding: 3px 10px;
+  border-radius: 999px;
+  width: fit-content;
+  margin-bottom: 2px;
+}
+
+.grow-sap-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.5vw, 36px);
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.grow-sap-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(13px, 1.1vw, 16px);
+  font-weight: 500;
+  color: #475569;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.grow-sap-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.grow-sap-hub-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.grow-sap-hub-btn:hover {
+  background: #f1f5f9;
+  border-color: #059669;
+  color: #047857;
+  transform: translateY(-1px);
+}
+
+/* Main Graphic Section */
+.grow-sap-main {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 4px 0;
+}
+
+.grow-sap-diagram-card {
+  position: relative;
+  width: 100%;
+  max-width: 1160px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 32px rgba(15, 23, 42, 0.07), 0 2px 6px rgba(15, 23, 42, 0.03);
+  padding: clamp(14px, 2vh, 22px) clamp(16px, 2.2vw, 32px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.grow-sap-diagram-card:hover {
+  box-shadow: 0 16px 42px rgba(15, 23, 42, 0.12), 0 0 22px rgba(16, 185, 129, 0.14);
+  border-color: #cbd5e1;
+}
+
+.grow-sap-img {
+  width: 100%;
+  max-height: 52vh;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: transform 0.25s ease;
+}
+
+.grow-sap-zoom-hint {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.grow-sap-diagram-card:hover .grow-sap-zoom-hint {
+  opacity: 1;
+}
+
+/* 3 Core Value Pillar Cards */
+.grow-sap-pillars-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(10px, 1.4vw, 20px);
+  width: 100%;
+  max-width: 1160px;
+  margin-top: clamp(10px, 1.4vh, 16px);
+}
+
+.grow-sap-pillar-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: all 0.2s ease;
+}
+
+.grow-sap-pillar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  border-color: #a7f3d0;
+}
+
+.grow-sap-pillar-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+.grow-sap-pillar-text {
+  font-size: 12px;
+  line-height: 1.45;
+  color: #334155;
+}
+
+.grow-sap-pillar-text strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+/* Footer Navigation */
+.grow-sap-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: clamp(8px, 1.2vh, 14px);
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.grow-sap-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.grow-sap-nav-btn:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+.grow-sap-nav-btn.primary {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: #ffffff;
+  border-color: #047857;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.35);
+}
+
+.grow-sap-nav-btn.primary:hover {
+  background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.45);
+}
+
+/* Modal Overlay */
+.grow-sap-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+.grow-sap-modal-content {
+  position: relative;
+  max-width: 95vw;
+  max-height: 92vh;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grow-sap-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  color: #475569;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.grow-sap-modal-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+  transform: scale(1.08);
+}
+
+.grow-sap-modal-img {
+  width: 100%;
+  height: auto;
+  max-height: 84vh;
+  object-fit: contain;
+  border-radius: 8px;
+}

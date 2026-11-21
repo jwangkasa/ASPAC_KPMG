@@ -1,0 +1,489 @@
+/* ========================================================
+   ATC AGENTS SLIDE
+   "Assistant break-down into agents"
+   ======================================================== */
+
+.atc-agents-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(14px, 2vh, 24px) clamp(24px, 3.2vw, 48px);
+  background: radial-gradient(circle at 50% 0%, #f4f6fc 0%, #ffffff 60%, #f1f3fa 100%);
+  color: #0f172a;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+}
+
+/* Background ambient glows */
+.atc-agents-glow-purple {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.09) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.atc-agents-glow-blue {
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header */
+.atc-agents-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: clamp(6px, 1vh, 12px);
+}
+
+.atc-agents-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.atc-agents-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #7c3aed;
+  background: rgba(124, 58, 237, 0.08);
+  padding: 3px 10px;
+  border-radius: 999px;
+  width: fit-content;
+  margin-bottom: 2px;
+}
+
+.atc-agents-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.5vw, 36px);
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.atc-agents-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(13px, 1.1vw, 16px);
+  font-weight: 500;
+  color: #475569;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.atc-agents-sparkle-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  border-radius: 12px;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(109, 40, 217, 0.3);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.atc-agents-sparkle-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(109, 40, 217, 0.4);
+}
+
+/* Main Graphic Area */
+.atc-agents-main {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 2px 0;
+}
+
+.atc-agents-diagram-card {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 32px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.03);
+  padding: clamp(12px, 1.6vh, 20px) clamp(14px, 1.8vw, 24px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.atc-agents-diagram-card:hover {
+  box-shadow: 0 16px 42px rgba(15, 23, 42, 0.12), 0 0 20px rgba(124, 58, 237, 0.12);
+  border-color: #cbd5e1;
+}
+
+.atc-agents-diagram-stage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.atc-agents-img {
+  width: 100%;
+  max-height: 58vh;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: transform 0.25s ease;
+  display: block;
+}
+
+.atc-agents-hotspots {
+  position: absolute;
+  top: 19.5%;
+  left: 2.4%;
+  width: 95.2%;
+  height: 9%;
+  display: flex;
+  gap: 1.8%;
+  pointer-events: auto;
+  z-index: 5;
+}
+
+.atc-agents-hotspot {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.atc-agents-hotspot:hover,
+.atc-agents-hotspot:focus,
+.atc-agents-hotspot.active {
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.atc-agents-zoom-hint {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+  z-index: 6;
+}
+
+.atc-agents-diagram-card:hover .atc-agents-zoom-hint {
+  opacity: 1;
+}
+
+/* Interactive Assistant Selector Chips */
+.atc-agents-strip {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  margin-top: clamp(6px, 1vh, 10px);
+  padding: 6px 12px;
+  background: rgba(248, 250, 252, 0.85);
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+}
+
+.atc-agents-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.atc-agents-chip:hover {
+  background: #f1f5f9;
+  border-color: #7c3aed;
+  color: #6d28d9;
+  transform: translateY(-1px);
+}
+
+.atc-agents-chip.active {
+  background: #7c3aed;
+  border-color: #6d28d9;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.35);
+}
+
+.atc-agents-chip-badge {
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.07);
+  font-weight: 700;
+}
+
+.atc-agents-chip.active .atc-agents-chip-badge {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* Selected Detail Info Drawer */
+.atc-agents-detail-bar {
+  margin-top: 8px;
+  padding: 8px 18px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+  font-size: 12px;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 1000px;
+  width: 95%;
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+.atc-agents-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.atc-agents-detail-title {
+  color: #6d28d9;
+  font-weight: 700;
+}
+
+.atc-agents-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+.atc-agents-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  padding: 2px 8px;
+  background: #f5f3ff;
+  color: #5b21b6;
+  border: 1px solid #ddd6fe;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Footer Note */
+.atc-agents-note {
+  font-size: 11px;
+  color: #64748b;
+  font-style: italic;
+  margin-top: 6px;
+  text-align: center;
+}
+
+/* Footer Navigation */
+.atc-agents-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: clamp(8px, 1.2vh, 14px);
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.atc-agents-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.atc-agents-nav-btn:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+.atc-agents-nav-btn.primary {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  color: #ffffff;
+  border-color: #6d28d9;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.35);
+}
+
+.atc-agents-nav-btn.primary:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.45);
+}
+
+/* Lightbox Modal */
+.atc-agents-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+.atc-agents-modal-content {
+  position: relative;
+  max-width: 95vw;
+  max-height: 92vh;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 16px 20px 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.atc-agents-modal-toolbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 12px;
+  padding-right: 40px;
+  flex-wrap: wrap;
+}
+
+.atc-agents-modal-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.atc-agents-modal-tabs {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.atc-modal-tab {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.atc-modal-tab:hover {
+  border-color: #7c3aed;
+  color: #6d28d9;
+}
+
+.atc-modal-tab.active {
+  background: #7c3aed;
+  border-color: #6d28d9;
+  color: #ffffff;
+}
+
+.atc-agents-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  color: #475569;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.atc-agents-modal-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+  transform: scale(1.08);
+}
+
+.atc-agents-modal-img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
